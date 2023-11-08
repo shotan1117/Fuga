@@ -1,3 +1,4 @@
+using SojaExiles;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,15 +13,6 @@ public class PlayerAcsion : MonoBehaviour
     Rigidbody parentRigidBody;
 
     private Rigidbody HaveObject;
-    private Animator openandclose;
-    private GameObject Door;
-    private bool open;
-    //private bool HitChack;
-    bool Chack;
-    void Start()
-    {
-        open = false;
-    }
 
     // Update is called once per frame
     void Update()
@@ -45,13 +37,6 @@ public class PlayerAcsion : MonoBehaviour
                         HaveObject.isKinematic = true;
                         HaveObject.transform.SetParent(parentObj.transform, true);
                     }
-                    else if(hit.collider.tag == "Door")
-                    {
-                        Debug.Log("a");
-                       openandclose = hit.collider.gameObject.GetComponent<Animator>();
-                        Dooropen();
-                        openandclose = null;
-                    }
                 }
             }
             // オブジェクトを持っていないときはオブジェクトを離す
@@ -62,35 +47,7 @@ public class PlayerAcsion : MonoBehaviour
                 HaveObject.transform.SetParent(null, true);
                 HaveObject.velocity = parentRigidBody.velocity;
                 HaveObject = null;
-                open = false;
             }
         }
-    }
-
-    private void Dooropen()
-    {
-        if (open == false)
-        {
-            StartCoroutine(opening());
-        }
-        else if (open == true)
-        {
-            StartCoroutine(closing());
-        }
-    }
-    IEnumerator opening()
-    {
-        print("you are opening the door");
-        openandclose.Play("Opening");
-        open = true;
-        yield return new WaitForSeconds(.5f);
-    }
-
-    IEnumerator closing()
-    {
-        print("you are closing the door");
-        openandclose.Play("Closing");
-        open = false;
-        yield return new WaitForSeconds(.5f);
     }
 }
