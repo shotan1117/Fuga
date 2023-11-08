@@ -1,3 +1,4 @@
+using SojaExiles;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,12 +13,6 @@ public class PlayerAcsion : MonoBehaviour
     Rigidbody parentRigidBody;
 
     private Rigidbody HaveObject;
-    //private bool HitChack;
-    bool Chack;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
