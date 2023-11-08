@@ -47,10 +47,9 @@ public class PlayerAcsion : MonoBehaviour
                     }
                     else if(hit.collider.tag == "Door")
                     {
-                       Door = hit.collider.gameObject;
-                       openandclose = Door.GetComponent<Animator>();
+                        Debug.Log("a");
+                       openandclose = hit.collider.gameObject.GetComponent<Animator>();
                         Dooropen();
-                        Door = null;
                         openandclose = null;
                     }
                 }
@@ -63,6 +62,7 @@ public class PlayerAcsion : MonoBehaviour
                 HaveObject.transform.SetParent(null, true);
                 HaveObject.velocity = parentRigidBody.velocity;
                 HaveObject = null;
+                open = false;
             }
         }
     }
