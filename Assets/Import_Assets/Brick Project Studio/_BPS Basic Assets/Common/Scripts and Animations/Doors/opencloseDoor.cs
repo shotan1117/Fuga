@@ -5,9 +5,8 @@ using UnityEngine;
 namespace SojaExiles
 
 {
-	public class OpencloseDoor : MonoBehaviour
+	public class opencloseDoor : MonoBehaviour
 	{
-
 		public Animator openandclose;
 		public bool open;
 		public Transform Player;
@@ -17,50 +16,50 @@ namespace SojaExiles
 			open = false;
 		}
 
-		//void OnMouseOver()
-		//{
-		//	{
-		//		if (Player)
-		//		{
-		//			float dist = Vector3.Distance(Player.position, transform.position);
-		//			if (dist < 500)
-		//			{
-		//				if (open == false)
-		//				{
-		//					if (Input.GetMouseButtonDown(0))
-		//					{
-		//						StartCoroutine(opening());
-		//					}
-		//				}
-		//				else
-		//				{
-		//					if (open == true)
-		//					{
-		//						if (Input.GetMouseButtonDown(0))
-		//						{
-		//							StartCoroutine(closing());
-		//						}
-		//					}
-
-		//				}
-
-		//			}
-		//		}
-
-		//	}
-
-		//}
-		public void Heavensdoar()
+		void OnMouseOver()
 		{
-            if (open == false)
-            {               
-                    StartCoroutine(opening());
-            }
-            else if (open == true)
-            {                                  
-                    StartCoroutine(closing());
-            }
-        }
+			{
+				if (Player)
+				{
+					float dist = Vector3.Distance(Player.transform.position, transform.position);
+					if (dist < 3.5f)
+					{
+						if (open == false)
+						{
+							if (Input.GetMouseButtonDown(0))
+							{
+								StartCoroutine(opening());
+							}
+						}
+						else
+						{
+							if (open == true)
+							{
+								if (Input.GetMouseButtonDown(0))
+								{
+									StartCoroutine(closing());
+								}
+							}
+
+						}
+
+					}
+				}
+
+			}
+
+		}
+		//public void Heavensdoar()
+		//{
+  //          if (open == false)
+  //          {               
+  //                  StartCoroutine(opening());
+  //          }
+  //          else if (open == true)
+  //          {                                  
+  //                  StartCoroutine(closing());
+  //          }
+  //      }
 		IEnumerator opening()
 		{
 			print("you are opening the door");
@@ -76,7 +75,5 @@ namespace SojaExiles
 			open = false;
 			yield return new WaitForSeconds(.5f);
 		}
-
-
 	}
 }
