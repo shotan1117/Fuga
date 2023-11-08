@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class PlayerAcsion : MonoBehaviour
 {
+    [SerializeField]
+    Transform parentObj;
 
-    private GameObject HaveObject;
-    private Rigidbody ObjectRB;
-    private bool HitChack;
+    [SerializeField]
+    Rigidbody parentRigidBody;
+
+    private Rigidbody HaveObject;
+    //private bool HitChack;
     bool Chack;
     void Start()
     {
@@ -18,50 +22,37 @@ public class PlayerAcsion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ObjectcarryChack();
-        ObjectCarry();
-        Debug.Log(Input.GetMouseButtonDown(0));
+        //Debug.Log(Input.GetMouseButtonDown(0));
 
-    }
-    public void ObjectcarryChack()
-    {       
-        if (HitChack && Input.GetMouseButtonDown(0))
-        {            
-            Chack = true;
-            ObjectRB = HaveObject.GetComponent<Rigidbody>();
-        }
-        if (Chack && Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0))
         {
-            ObjectRB = null;
-            HaveObject = null;
-            Chack = false;
-        }
-        
-    }
+            // オブジェクトを持っていないときはオブジェクトを持つ
+            if(HaveObject == null)
+            {
+                float distance = 10;
+                var hits = Physics.RaycastAll(Camera.main.transform.position, Camera.main.transform.forward, distance);
 
-    public void ObjectCarry()
-    {
-        if (HitChack)
-        {
-            HaveObject.transform.position = this.transform.position;
-        }
-    }
-    private void OnTriggerEnter(Collider Collider)
-    {
-        if (Collider.gameObject.tag == "Object" && HaveObject == null)
-        {
-            HaveObject = Collider.gameObject;
-            HitChack = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider Collider)
-    {
-        if(Collider.gameObject == HaveObject)
-        {
-           // HaveObject = null;
-            ObjectRB = null;
-           // HitChack = false;
+                foreach(var hit in hits)
+                {
+                    if (hit.collider.tag == "Object")
+                    {
+                        HaveObject = hit.collider.gameObject.GetComponent<Rigidbody>();
+                        HaveObject.constraints = RigidbodyConstraints.FreezePositionY;
+                        HaveObject.transform.position = transform.position + new Vector3(0, 1);
+                        HaveObject.isKinematic = true;
+                        HaveObject.transform.SetParent(parentObj.transform, true);
+                    }
+                }
+            }
+            // オブジェクトを持っていないときはオブジェクトを離す
+            else
+            {
+                HaveObject.constraints = 0;
+                HaveObject.isKinematic = false;
+                HaveObject.transform.SetParent(null, true);
+                HaveObject.velocity = parentRigidBody.velocity;
+                HaveObject = null;
+            }
         }
     }
 }
