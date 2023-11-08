@@ -7,7 +7,6 @@ namespace SojaExiles
 {
 	public class opencloseDoor1 : MonoBehaviour
 	{
-
 		public Animator openandclose1;
 		public bool open;
 		public Transform Player;
