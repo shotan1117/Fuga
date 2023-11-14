@@ -32,7 +32,5 @@ public class PlayerAnimator : MonoBehaviour
         {
             Anima.SetTrigger("StandFlag");
         }
-
-        Debug.Log(Player.y);
     }
 }
