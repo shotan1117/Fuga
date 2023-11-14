@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -11,23 +12,24 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float playersiderotate;
 
+    public PlayerAnimator PlayerAnimator;
     public GameObject cam;
     Quaternion cameraRot, characterRot;
     private Rigidbody rb;
     private Vector2 move;
 
     //ïœêîÇÃêÈåæ(äpìxÇÃêßå¿óp)
-    float minX = -90f, maxX = 90f;
+    float minX = -90f, maxX = 50f;
 
     public PlayerAcsion PlayerAcsion;
-
+     
     // Start is called before the first frame update
     void Start()
     {
         cameraRot = cam.transform.localRotation;
         characterRot = transform.localRotation;
         rb = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -36,8 +38,8 @@ public class Player : MonoBehaviour
         float xRot = Input.GetAxis("Mouse X") * playersiderotate;
         //ècï˚å¸ÇÃéãì_ïœçXÇÕíxÇ≠
         float yRot = Input.GetAxis("Mouse Y") * playersiderotate * 0.5f;
-        move.x = Input.GetAxisRaw("Horizontal") * speed;
-        move.y = Input.GetAxisRaw("Vertical") * speed;
+        move.x = Input.GetAxisRaw("Horizontal");
+        move.y = Input.GetAxisRaw("Vertical");
 
         cameraRot *= Quaternion.Euler(-yRot, 0, 0);
         characterRot *= Quaternion.Euler(0, xRot, 0);
@@ -46,11 +48,13 @@ public class Player : MonoBehaviour
         cameraRot = ClampRotation(cameraRot);
         cam.transform.localRotation = cameraRot;
         transform.localRotation = characterRot;
+
+        PlayerAnimator.Animation(move);
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = (transform.right * move.x) + (transform.forward * move.y) + new Vector3(0, rb.velocity.y, 0);
+        rb.velocity = (transform.right * move.x) + (transform.forward * move.y) + new Vector3(0, rb.velocity.y, 0) * speed;
     }
 
     //äpìxêßå¿ä÷êîÇÃçÏê¨
