@@ -13,7 +13,8 @@ public abstract class ItemObject : ScriptableObject
 {
     public GameObject prefab;
     public ItemType type;
-  
+    [TextArea(1, 20)]
+    public string name;
     [TextArea(15,20)]
     public string description;
 }
