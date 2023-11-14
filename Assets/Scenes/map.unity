@@ -5331,7 +5331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openandclose: {fileID: 1253111088}
   open: 0
-  Player: {fileID: 0}
+  Player: {fileID: 716127143}
 --- !u!1 &1253991421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4018637652582144206, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
@@ -7614,14 +7614,78 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 242065411777388064, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 242065411921721120, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 464750539916954467, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 804395065394472715, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 881988479668118441, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 891755559204955303, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 1121575607800130455, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 1558350649561474455, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 1643019800293767264, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 2127090798467611277, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 2186288922930148536, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 2355678493693899388, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 2543636651606064416, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
     - target: {fileID: 2744919135401709275, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
       propertyPath: m_TagString
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 2844234843869143142, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 2844234844283831280, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
     - target: {fileID: 3174956571384871254, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
       propertyPath: m_TagString
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 3226985428084409446, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
     - target: {fileID: 3359494505501360606, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
       propertyPath: open
       value: 1
@@ -7630,10 +7694,22 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 716127143}
+    - target: {fileID: 3887032325917127278, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 3921260812065454133, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
     - target: {fileID: 3964350758316627592, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
       propertyPath: m_TagString
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 4130659878411066687, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
     - target: {fileID: 4192572637576480884, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -7686,10 +7762,38 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 716127143}
+    - target: {fileID: 4355898561615318968, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 4379553990631659641, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 4379553991489088563, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
     - target: {fileID: 4564268606724491982, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 099e6cc38da8ff74bb68d0bf29e24642, type: 2}
+    - target: {fileID: 4705125719147487076, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 4720027746740604948, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 4870646743190663245, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 4998413284797345196, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
     - target: {fileID: 5097698265590523980, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
       propertyPath: m_TagString
       value: Door
@@ -7698,18 +7802,110 @@ PrefabInstance:
       propertyPath: m_Name
       value: Structure_03
       objectReference: {fileID: 0}
+    - target: {fileID: 5445613923973405902, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 5508983246416864938, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 5535708560050739767, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 5650366681903643020, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 6112556525793739286, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 6188936327651971316, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 6251661588403412642, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 6251661588549680436, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 6463980980812000524, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 7093823076166401547, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 7252353624469900061, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 7282432631096830869, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
     - target: {fileID: 7318674891528426102, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
       propertyPath: m_TagString
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 7366288472754759680, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 7524049667412882534, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 7605284159219489505, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
     - target: {fileID: 7769816769963712330, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
       propertyPath: m_TagString
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 7979552790846112112, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 8096669274246997153, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 8096669274808302045, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 8096669274881282692, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 8137323389853052270, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 8151022721275421013, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
+    - target: {fileID: 8156386503846606114, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
     - target: {fileID: 8342921528803132523, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
       propertyPath: m_TagString
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 9004365366706276690, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 716127143}
     m_RemovedComponents:
     - {fileID: 7442616043164766242, guid: aa2008ecd63c2d14285b68bb20bd977a, type: 3}
     m_RemovedGameObjects: []
