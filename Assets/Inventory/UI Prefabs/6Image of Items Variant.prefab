@@ -108,7 +108,19 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.7830189
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1349735338405676065, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
+    - {fileID: 3739323779146022968, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
+    - {fileID: 8659000259749218630, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
+    - {fileID: 8322935592894097689, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
+    - {fileID: 5704888538563072670, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
+    - {fileID: 2464314031528450859, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
+    - {fileID: 2273153999129428542, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
+    - {fileID: 6265167716771787253, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
+    - {fileID: 1725381997304992119, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
+    - {fileID: 707616908230170306, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
+    - {fileID: 2173468213881130657, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
+    - {fileID: -1443382362977451596, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
