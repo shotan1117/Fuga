@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour
 {
     private Animator Anima;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +20,11 @@ public class PlayerAnimator : MonoBehaviour
 
         if (Player.x != 0 || Player.y != 0)
         {
-            if(Player.y > 0)
+            if (Player.y > 0)
             {
                 Anima.SetTrigger("WalkFlag");
             }
-            else if(Player.y < 0) 
+            else if (Player.y < 0)
             {
                 Anima.SetTrigger("BackFlag");
             }
@@ -32,5 +33,6 @@ public class PlayerAnimator : MonoBehaviour
         {
             Anima.SetTrigger("StandFlag");
         }
+
     }
 }
