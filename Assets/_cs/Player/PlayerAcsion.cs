@@ -24,6 +24,7 @@ public class PlayerAcsion : MonoBehaviour
             // オブジェクトを持っていないときはオブジェクトを持つ
             if(HaveObject == null)
             {
+
                 float distance = 10;
                 var hits = Physics.RaycastAll(Camera.main.transform.position, Camera.main.transform.forward, distance);
 
