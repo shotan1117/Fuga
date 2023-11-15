@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private Vector2 move;
 
-    //変数の宣言(角度の制限用)
+    //角度の制限用
     float minX = -90f, maxX = 50f;
 
     public PlayerAcsion PlayerAcsion;
