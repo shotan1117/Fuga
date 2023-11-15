@@ -54,6 +54,11 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(move.x ==0 && move.y ==0)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
         rb.velocity = (transform.right * move.x) + (transform.forward * move.y) + new Vector3(0, rb.velocity.y, 0) * speed;
     }
 
