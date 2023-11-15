@@ -12,38 +12,9 @@ public class PlayerAnimator : MonoBehaviour
         Anima = GetComponent<Animator>();
     }
 
-    public void Animation( Vector2 Player)
+    public void Animation( Vector2 Playermove)
     {
-        Anima.ResetTrigger("WalkFlag");
-        Anima.ResetTrigger("BackFlag");
-        Anima.ResetTrigger("StandFlag");
-        Anima.ResetTrigger("RightFlag");
-        Anima.ResetTrigger("LeftFlag");
-
-        if (Player.x != 0 || Player.y != 0)
-        {
-            if (Player.y > 0)
-            {
-                Anima.SetTrigger("WalkFlag");
-            }
-            else if (Player.y < 0)
-            {
-                Anima.SetTrigger("BackFlag");
-            }
-
-            if(Player.x < 0)
-            {
-                Anima.SetTrigger("LeftFlag");
-            }
-            else if(Player.x > 0)
-            {
-                Anima.SetTrigger("RightFlag");
-            }
-        }
-        else
-        {
-            Anima.SetTrigger("StandFlag");
-        }
-
+        Anima.SetFloat("X" ,Playermove.x);
+        Anima.SetFloat ("Y" ,Playermove.y);
     }
 }
