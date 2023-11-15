@@ -17,6 +17,8 @@ public class PlayerAnimator : MonoBehaviour
         Anima.ResetTrigger("WalkFlag");
         Anima.ResetTrigger("BackFlag");
         Anima.ResetTrigger("StandFlag");
+        Anima.ResetTrigger("RightFlag");
+        Anima.ResetTrigger("LeftFlag");
 
         if (Player.x != 0 || Player.y != 0)
         {
@@ -27,6 +29,15 @@ public class PlayerAnimator : MonoBehaviour
             else if (Player.y < 0)
             {
                 Anima.SetTrigger("BackFlag");
+            }
+
+            if(Player.x < 0)
+            {
+                Anima.SetTrigger("LeftFlag");
+            }
+            else if(Player.x > 0)
+            {
+                Anima.SetTrigger("RightFlag");
             }
         }
         else

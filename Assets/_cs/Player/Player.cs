@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             rb.velocity = Vector3.zero;
             return;
         }
-        rb.velocity = (transform.right * move.x) + (transform.forward * move.y) + new Vector3(0, rb.velocity.y, 0) * speed;
+        rb.velocity = (transform.right * move.x) + (transform.forward * move.y) * speed + new Vector3(0, rb.velocity.y, 0) ;
     }
 
     //äpìxêßå¿ä÷êîÇÃçÏê¨
