@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     {
         float xRot = Input.GetAxis("Mouse X") * playersiderotate;
         //c•ûŒü‚Ì‹“_•ÏX‚Í’x‚­
-        float yRot = Input.GetAxis("Mouse Y") * playersiderotate * 0.5f;
+        float yRot = Input.GetAxis("Mouse Y") * playersiderotate;
         move.x = Input.GetAxisRaw("Horizontal");
         move.y = Input.GetAxisRaw("Vertical");
 
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             rb.velocity = Vector3.zero;
             return;
         }
-        rb.velocity = (transform.right * move.x) + (transform.forward * move.y) * speed + new Vector3(0, rb.velocity.y, 0) ;
+        rb.velocity = ((transform.right * move.x) * speed) + ((transform.forward * move.y) * speed) + new Vector3(0, rb.velocity.y, 0) ;
     }
 
     //Šp“x§ŒÀŠÖ”‚Ìì¬

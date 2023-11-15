@@ -17,7 +17,7 @@ public class playerTest : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void ItemCatch(Collider other)
     {
         var item = other.GetComponent<item>();
         if(item)

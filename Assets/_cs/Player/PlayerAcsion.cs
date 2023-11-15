@@ -13,7 +13,7 @@ public class PlayerAcsion : MonoBehaviour
     Rigidbody parentRigidBody;
 
     private Rigidbody HaveObject;
-
+    public playerTest playerTest;
     // Update is called once per frame
     void Update()
     {
@@ -27,7 +27,7 @@ public class PlayerAcsion : MonoBehaviour
 
                 float distance = 10;
                 var hits = Physics.RaycastAll(Camera.main.transform.position, Camera.main.transform.forward, distance);
-
+                Debug.Log(hits);
                 foreach(var hit in hits)
                 {
                     if (hit.collider.tag == "Object")
@@ -37,6 +37,10 @@ public class PlayerAcsion : MonoBehaviour
                         HaveObject.transform.position = transform.position + new Vector3(0, 1);
                         HaveObject.isKinematic = true;
                         HaveObject.transform.SetParent(parentObj.transform, true);
+                    }
+                    if(hit.collider.tag == "Item")
+                    {
+                        playerTest.ItemCatch(hit.collider);
                     }
                 }
             }
