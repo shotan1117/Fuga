@@ -15,7 +15,7 @@ public class DisplayInventory : MonoBehaviour
     public int NUMBER_OF_COLUMN;
     public int Y_SPACE_BETWEEN_ITEMS;
 
-    Dictionary<InventorySlot,GameObject> itemDisplayed
+    public Dictionary<InventorySlot,GameObject> itemDisplayed
         = new Dictionary<InventorySlot,GameObject>();
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,7 @@ public class DisplayInventory : MonoBehaviour
     {
         for(int i =0;i<inventory.container.Count;i++)
         {
+            
             if (itemDisplayed.ContainsKey(inventory.container[i]))
             {
                 itemDisplayed[inventory.container[i]].GetComponentInChildren<TextMeshProUGUI>().text=
@@ -43,7 +44,7 @@ public class DisplayInventory : MonoBehaviour
             {
                 var obj = Instantiate(inventory.container[i].Item.prefab,
                 Vector3.zero, Quaternion.identity, transform);
-
+                
                 obj.GetComponent<RectTransform>().localPosition
                     = GetPosition(i);
 
