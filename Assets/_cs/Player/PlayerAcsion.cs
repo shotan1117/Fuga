@@ -20,8 +20,7 @@ public class PlayerAcsion : MonoBehaviour
     private Rigidbody HaveObject;
     private Collider ObjectCollider;
 
-
-    public playerTest playerTest;
+    public InventoryObject inventory;
 
     private void Start()
     {
@@ -46,7 +45,7 @@ public class PlayerAcsion : MonoBehaviour
                     }
                     if(hit.collider.tag == "Item")
                     {
-                        playerTest.ItemCatch(hit.collider);
+                        Itemaddition(hit.collider);
                     }
                 }
             }
@@ -76,5 +75,15 @@ public class PlayerAcsion : MonoBehaviour
         HaveObject.transform.SetParent(parentObj.transform, true);
         HaveObject.transform.localPosition = new Vector3(0, 0.1f, 0.3f);
         ObjectCollider.transform.rotation = transform.rotation;
+    }
+
+    private void Itemaddition(Collider othe)
+    {
+        var item = othe.GetComponent<item>();
+        if (item)
+        {
+            inventory.AddItem(item.itemm, 1);
+            Destroy(othe.gameObject);
+        }
     }
 }
