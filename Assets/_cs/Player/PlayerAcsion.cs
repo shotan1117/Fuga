@@ -20,6 +20,8 @@ public class PlayerAcsion : MonoBehaviour
     private Rigidbody HaveObject;
     private Collider ObjectCollider;
 
+    //アイテムボックス
+    public ShowCanvas ShowCanvase;
     public InventoryObject inventory;
 
     private void Start()
@@ -29,14 +31,15 @@ public class PlayerAcsion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        OpenBox();
+        if (Time.timeScale== 0) { return; }
+        if (Input.GetMouseButtonDown(0))
         {
             // オブジェクトを持っていないときはオブジェクトを持つ
             if(HaveObject == null)
             {
                 float distance = 10;
                 var hits = Physics.RaycastAll(Camera.main.transform.position, Camera.main.transform.forward, distance);
-                Debug.Log(hits);
                 foreach (var hit in hits)
                 {
                     if (hit.collider.tag == "Object")
@@ -62,10 +65,12 @@ public class PlayerAcsion : MonoBehaviour
                 ObjectCollider = null;
             }
         }
+      
     }
 
     private void ObjectCatch(Collider othe)
     {
+        //持てるオブジェクト取得
         ObjectCollider = othe;
         HaveObject = ObjectCollider.gameObject.GetComponent<Rigidbody>();
         ObjectCollider.enabled = false;  
@@ -73,17 +78,35 @@ public class PlayerAcsion : MonoBehaviour
         HaveObject.constraints = RigidbodyConstraints.FreezePositionY;
         HaveObject.isKinematic = true;
         HaveObject.transform.SetParent(parentObj.transform, true);
-        HaveObject.transform.localPosition = new Vector3(0, 0.1f, 0.3f);
-        ObjectCollider.transform.rotation = transform.rotation;
+        HaveObject.transform.localPosition = new Vector3(0, 0.1f, 0.3f); 
     }
 
     private void Itemaddition(Collider othe)
     {
-        var item = othe.GetComponent<item>();
+        //アイテム格納
+        var item = othe.gameObject.GetComponent<item>();
         if (item)
         {
             inventory.AddItem(item.itemm, 1);
             Destroy(othe.gameObject);
         }
+    }
+
+    private void OpenBox()
+    {
+        //アイテムボックス
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+           ShowCanvase.OpenItemBox();
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        //アイテムボックス内リセット
+        inventory.container.Clear();
+        inventory.Using_Item = null;
+        inventory.Merging_Item_First = null;
+        inventory.Merging_Item_Second = null;
     }
 }
