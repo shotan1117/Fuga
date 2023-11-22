@@ -86,5 +86,6 @@ public class DisplayInventory : MonoBehaviour
     public void SelectItem(ItemObject item)
     {
         description.text = item.description;
+        
     }
 }
