@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -11,16 +10,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float playersiderotate;
 
+    public PlayerAnimator PlayerAnimator;
     public GameObject cam;
     Quaternion cameraRot, characterRot;
     private Rigidbody rb;
     private Vector2 move;
 
-    //ïœêîÇÃêÈåæ(äpìxÇÃêßå¿óp)
-    float minX = -90f, maxX = 90f;
-
-    public PlayerAcsion PlayerAcsion;
-
+    //äpìxÇÃêßå¿óp
+    float minX = -90f, maxX = 50f;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,16 +25,19 @@ public class Player : MonoBehaviour
         characterRot = transform.localRotation;
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0) { return; }
         float xRot = Input.GetAxis("Mouse X") * playersiderotate;
         //ècï˚å¸ÇÃéãì_ïœçXÇÕíxÇ≠
-        float yRot = Input.GetAxis("Mouse Y") * playersiderotate * 0.5f;
-        move.x = Input.GetAxisRaw("Horizontal") * speed;
-        move.y = Input.GetAxisRaw("Vertical") * speed;
+        float yRot = Input.GetAxis("Mouse Y") * playersiderotate;
+
+        move.x = Input.GetAxisRaw("Horizontal");
+        move.y = Input.GetAxisRaw("Vertical");
 
         cameraRot *= Quaternion.Euler(-yRot, 0, 0);
         characterRot *= Quaternion.Euler(0, xRot, 0);
@@ -46,11 +46,19 @@ public class Player : MonoBehaviour
         cameraRot = ClampRotation(cameraRot);
         cam.transform.localRotation = cameraRot;
         transform.localRotation = characterRot;
+        PlayerAnimator.Animation(move);
+        Debug.Log(Time.timeScale);
+        
     }
 
     private void FixedUpdate()
-    {
-        rb.velocity = (transform.right * move.x) + (transform.forward * move.y) + new Vector3(0, rb.velocity.y, 0);
+    {    
+        if(move.x ==0 && move.y ==0)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
+        rb.velocity = ((transform.right * move.x) * speed) + ((transform.forward * move.y) * speed) + new Vector3(0, rb.velocity.y, 0) ;
     }
 
     //äpìxêßå¿ä÷êîÇÃçÏê¨
