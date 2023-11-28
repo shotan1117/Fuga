@@ -7,8 +7,9 @@ public class SearchBlock : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Break;
-    public GameObject Bed;
-    Bed script;
+
+    public GameObject Book;
+    Book script;
 
 
 
@@ -17,24 +18,23 @@ public class SearchBlock : MonoBehaviour
     {
         Player = GameObject.FindWithTag("Player");
         Break = GameObject.Find("break");
-        Bed = GameObject.Find("Bed_Apt_02_01");
-        script = Bed.GetComponent<Bed>();
+        Book = GameObject.Find("book_0001c");
+        script = Book.GetComponent<Book>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
 
     private void OnTriggerEnter(Collider other)
     {
-       
-         script.isBreak = true;
-         Debug.Log("true‚É‚µ‚½");
-      
-
-
+         script.isInPlayer = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        script.isInPlayer = false;
     }
 }
