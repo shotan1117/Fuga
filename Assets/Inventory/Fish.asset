@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4307448926211521669, guid: 1ba11cdff5c4bd840b68755b491cd72b, type: 3}
   type: 0
+  ItemID: 5
+  name: 333
   description: big big big big fishbig big big big fishbig big big big fishbig big
     big big fishbig big big big fishbig big big big fishbig big big big fishbig big
     big big fish

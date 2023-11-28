@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -18,26 +16,26 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private Vector2 move;
 
-    //ïœêîÇÃêÈåæ(äpìxÇÃêßå¿óp)
+    //äpìxÇÃêßå¿óp
     float minX = -90f, maxX = 50f;
-
-    public PlayerAcsion PlayerAcsion;
-     
     // Start is called before the first frame update
     void Start()
     {
         cameraRot = cam.transform.localRotation;
         characterRot = transform.localRotation;
         rb = GetComponent<Rigidbody>();
-        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0) { return; }
         float xRot = Input.GetAxis("Mouse X") * playersiderotate;
         //ècï˚å¸ÇÃéãì_ïœçXÇÕíxÇ≠
-        float yRot = Input.GetAxis("Mouse Y") * playersiderotate * 0.5f;
+        float yRot = Input.GetAxis("Mouse Y") * playersiderotate;
+
         move.x = Input.GetAxisRaw("Horizontal");
         move.y = Input.GetAxisRaw("Vertical");
 
@@ -48,18 +46,19 @@ public class Player : MonoBehaviour
         cameraRot = ClampRotation(cameraRot);
         cam.transform.localRotation = cameraRot;
         transform.localRotation = characterRot;
-
         PlayerAnimator.Animation(move);
+        Debug.Log(Time.timeScale);
+        
     }
 
     private void FixedUpdate()
-    {
+    {    
         if(move.x ==0 && move.y ==0)
         {
             rb.velocity = Vector3.zero;
             return;
         }
-        rb.velocity = (transform.right * move.x) + (transform.forward * move.y) * speed + new Vector3(0, rb.velocity.y, 0) ;
+        rb.velocity = ((transform.right * move.x) * speed) + ((transform.forward * move.y) * speed) + new Vector3(0, rb.velocity.y, 0) ;
     }
 
     //äpìxêßå¿ä÷êîÇÃçÏê¨

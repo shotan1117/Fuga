@@ -15,8 +15,21 @@ public class ItemUIIcon : MonoBehaviour
     public void OnPointerEnter()
     {
         D_inventory.SelectItem(item);
-
-        
+        GameObject.Find("Button_Use").GetComponent<OnUseClick>()
+            .item = item;
+        if (GameObject.Find("Button_Merge").GetComponent<OnMergeClick>()
+            .clicked==false)
+        {
+            GameObject.Find("Button_Merge").GetComponent<OnMergeClick>()
+           .item1 = item;
+        }else if(GameObject.Find("Button_Merge").GetComponent<OnMergeClick>()
+            .clicked == true
+            )
+        {
+            GameObject.Find("Button_Merge").GetComponent<OnMergeClick>()
+           .item2= item;
+        }
+       
     }
   
 }
