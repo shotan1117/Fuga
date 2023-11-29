@@ -19,6 +19,9 @@ public class InventoryObject : ScriptableObject
 {
    public List<InventorySlot> container = new List<InventorySlot>();
     public ItemObject Using_Item;
+    public ItemObject Merging_Item_First;
+    public ItemObject Merging_Item_Second;
+    
     public void AddItem(ItemObject _item,int _amount)
     {
         bool hasItem = false;
@@ -27,7 +30,7 @@ public class InventoryObject : ScriptableObject
             if (container[i].Item==_item)
             {
                 container[i].AddAmount(_amount);
-
+               
                 
              
                 hasItem = true;
@@ -41,10 +44,26 @@ public class InventoryObject : ScriptableObject
         }
     }
 
+    public void RemoveItem(ItemObject _item)
+    {
+        for (int i = 0; i < container.Count; i++)
+        {
+            if (container[i].Item == _item)
+            {
+                container[i]=null;
+                
+
+                break;
+            }
+
+        }
+
+    }
+
     public void UseItem(ItemObject _item)
     {
         Using_Item= _item;
-        Debug.Log(_item.name+"is being used!");
+        Debug.Log(_item.name+"‚ðŽg‚Á‚Ä‚¢‚é!");
     }
 }
 

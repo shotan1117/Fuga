@@ -18,8 +18,8 @@ public class OnUseClick : MonoBehaviour
         
     }
 
-    void OnUseClickkk()
+    public void OnUseClickkk()
     {
-
+        inventory.UseItem(item);
     }
 }
