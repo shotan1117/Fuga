@@ -17,7 +17,7 @@ public class playerTest : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)//item ÇÅ@ÉQÉbÉg
     {
         var item = other.GetComponent<item>();
         if(item)
@@ -30,5 +30,8 @@ public class playerTest : MonoBehaviour
     private void OnApplicationQuit()
     {
         inventory.container.Clear();
+        inventory.Using_Item = null;
+        inventory.Merging_Item_First = null;
+        inventory.Merging_Item_Second = null;
     }
 }
