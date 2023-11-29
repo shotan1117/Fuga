@@ -293,6 +293,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1034381152229280905, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2805250218814075919, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -767,11 +771,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 1e4c9d0deb3bcc144ae6e91318e143a7, type: 3}
---- !u!4 &1164870952 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2805250218814075919, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
-  m_PrefabInstance: {fileID: 473929584}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1188277156 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1772613594903047352, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
@@ -1674,7 +1673,7 @@ PrefabInstance:
     - target: {fileID: 1348476250425944395, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1164870952}
+      objectReference: {fileID: 0}
     - target: {fileID: 1589676244393338327, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
@@ -1714,7 +1713,7 @@ PrefabInstance:
     - target: {fileID: 2786756122303588230, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1164870952}
+      objectReference: {fileID: 0}
     - target: {fileID: 2943067574329094322, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
@@ -1726,15 +1725,11 @@ PrefabInstance:
     - target: {fileID: 3522863894072630870, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1164870952}
+      objectReference: {fileID: 0}
     - target: {fileID: 3598073967246460602, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3727064489041986306, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 1164870952}
     - target: {fileID: 4205978968836833580, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
@@ -1742,7 +1737,7 @@ PrefabInstance:
     - target: {fileID: 4205978969259958970, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1164870952}
+      objectReference: {fileID: 0}
     - target: {fileID: 4438136938716590240, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
@@ -1750,7 +1745,7 @@ PrefabInstance:
     - target: {fileID: 4497604115785826300, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1164870952}
+      objectReference: {fileID: 0}
     - target: {fileID: 4941239785306271696, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
@@ -1758,7 +1753,7 @@ PrefabInstance:
     - target: {fileID: 5227225022112530717, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1164870952}
+      objectReference: {fileID: 0}
     - target: {fileID: 5243852287418290728, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
@@ -1770,7 +1765,7 @@ PrefabInstance:
     - target: {fileID: 5468564036254580712, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1164870952}
+      objectReference: {fileID: 0}
     - target: {fileID: 5468564036409252990, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
@@ -1814,7 +1809,7 @@ PrefabInstance:
     - target: {fileID: 7788743955491469310, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1164870952}
+      objectReference: {fileID: 0}
     - target: {fileID: 7798084912146899849, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
