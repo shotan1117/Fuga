@@ -79,6 +79,7 @@ public class PlayerAcsion : MonoBehaviour
         HaveObject.isKinematic = true;
         HaveObject.transform.SetParent(parentObj.transform, true);
         HaveObject.transform.localPosition = new Vector3(0, 0.1f, 0.3f); 
+        HaveObject.transform.rotation = this.transform.rotation;
     }
 
     private void Itemaddition(Collider othe)
@@ -97,7 +98,7 @@ public class PlayerAcsion : MonoBehaviour
         //アイテムボックス
         if (Input.GetKeyDown(KeyCode.E))
         {
-           //ShowCanvase.OpenItemBox();
+           ShowCanvase.OpenItemBox();
         }
     }
 

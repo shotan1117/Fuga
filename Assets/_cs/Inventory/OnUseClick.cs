@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OnUseClick : MonoBehaviour
 {
@@ -9,17 +10,18 @@ public class OnUseClick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
-    public void OnUseClickkk()
+    public void ButtonClick()
     {
+        Debug.Log("a");
         inventory.UseItem(item);
     }
 }
