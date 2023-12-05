@@ -39,8 +39,9 @@ public class PlayerAcsion : MonoBehaviour
             if(HaveObject == null)
             {
                 float distance = 10;
-                var hits = Physics.RaycastAll(Camera.main.transform.position, Camera.main.transform.forward, distance);
-                foreach (var hit in hits)
+                //foreach (var hit in hits)
+                RaycastHit hit;
+                if( Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance)) 
                 {
                     if (hit.collider.tag == "Object")
                     {
