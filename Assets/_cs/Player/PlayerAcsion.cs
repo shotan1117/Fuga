@@ -24,6 +24,8 @@ public class PlayerAcsion : MonoBehaviour
     public ShowCanvas ShowCanvase;
     public InventoryObject inventory;
 
+    private Gimmick gimmick;
+
     private void Start()
     {
         BoxCollider.enabled = false;
@@ -110,5 +112,28 @@ public class PlayerAcsion : MonoBehaviour
         inventory.Using_Item = null;
         inventory.Merging_Item_First = null;
         inventory.Merging_Item_Second = null;
+    }
+    public void UseItem( int itemID)
+    {
+        if(gimmick != null)
+        {
+            gimmick.UseObject(itemID);
+        }       
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+       if(other.CompareTag("Gimmick"))
+        {
+            gimmick = other.GetComponent<Gimmick>();
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Gimmick"))
+        {
+            gimmick = null;
+        }
     }
 }

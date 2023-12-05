@@ -8,6 +8,7 @@ TagManager:
   - Doar
   - Door
   - Item
+  - Gimmick
   layers:
   - Default
   - TransparentFX

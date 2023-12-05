@@ -21,7 +21,8 @@ public class InventoryObject : ScriptableObject
     public ItemObject Using_Item;
     public ItemObject Merging_Item_First;
     public ItemObject Merging_Item_Second;
-    
+
+
     public void AddItem(ItemObject _item,int _amount)
     {
         bool hasItem = false;
@@ -30,8 +31,6 @@ public class InventoryObject : ScriptableObject
             if (container[i].Item==_item)
             {
                 container[i].AddAmount(_amount);
-               
-                
              
                 hasItem = true;
                 break;
@@ -63,6 +62,8 @@ public class InventoryObject : ScriptableObject
     public void UseItem(ItemObject _item)
     {
         Using_Item= _item;
+        //Using_Item.used = true;
+
         Debug.Log(_item.name+"‚ðŽg‚Á‚Ä‚¢‚é!");
     }
 }
