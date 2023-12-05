@@ -97,7 +97,7 @@ public class PlayerAcsion : MonoBehaviour
     private void OpenBox()
     {
         //アイテムボックス
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("Inventory"))
         {
            ShowCanvase.OpenItemBox();
         }

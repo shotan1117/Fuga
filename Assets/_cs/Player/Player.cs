@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float playersiderotate;
 
+    Vector2 Rote;
     public PlayerAnimator PlayerAnimator;
     public GameObject cam;
     Quaternion cameraRot, characterRot;
@@ -32,23 +33,20 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0) { return; }
-        float xRot = Input.GetAxis("Mouse X") * playersiderotate;
+        Rote.x = Input.GetAxis("Mouse X") * playersiderotate;
         //c•ûŒü‚Ì‹“_•ÏX‚Í’x‚­
-        float yRot = Input.GetAxis("Mouse Y") * playersiderotate;
+        Rote.y = Input.GetAxis("Mouse Y") * playersiderotate;
 
         move.x = Input.GetAxisRaw("Horizontal");
         move.y = Input.GetAxisRaw("Vertical");
-
-        cameraRot *= Quaternion.Euler(-yRot, 0, 0);
-        characterRot *= Quaternion.Euler(0, xRot, 0);
+        cameraRot *= Quaternion.Euler(-Rote.y, 0, 0);
+        characterRot *= Quaternion.Euler(0, Rote.x, 0);
 
         //Update‚Ì’†‚Åì¬‚µ‚½ŠÖ”‚ğŒÄ‚Ô
         cameraRot = ClampRotation(cameraRot);
         cam.transform.localRotation = cameraRot;
         transform.localRotation = characterRot;
-        PlayerAnimator.Animation(move);
-        Debug.Log(Time.timeScale);
-        
+        PlayerAnimator.Animation(move);       
     }
 
     private void FixedUpdate()
