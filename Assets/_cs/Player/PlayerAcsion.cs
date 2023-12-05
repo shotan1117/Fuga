@@ -85,14 +85,14 @@ public class PlayerAcsion : MonoBehaviour
         HaveObject.transform.rotation = this.transform.rotation;
     }
 
-    private void Itemaddition(Collider othe)
+    private void Itemaddition(Collider other)
     {
         //ƒAƒCƒeƒ€Ši”[
-        var item = othe.gameObject.GetComponent<item>();
+        var item = other.gameObject.GetComponent<item>();
         if (item)
         {
             inventory.AddItem(item.itemm, 1);
-            Destroy(othe.gameObject);
+            Destroy(other.gameObject);
         }
     }
 
