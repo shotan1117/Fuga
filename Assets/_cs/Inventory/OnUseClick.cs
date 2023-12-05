@@ -21,7 +21,6 @@ public class OnUseClick : MonoBehaviour
 
     public void ButtonClick()
     {
-        Debug.Log("a");
         inventory.UseItem(item);
     }
 }

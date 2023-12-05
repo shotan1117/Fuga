@@ -14,7 +14,6 @@ public class ItemUIIcon : MonoBehaviour
 
     public void OnPointerEnter()
     {
-        Debug.Log("‰Ÿ‚³‚ê‚½");
         D_inventory.SelectItem(item);
         GameObject.Find("Button_Use").GetComponent<OnUseClick>()
             .item = item;
