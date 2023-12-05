@@ -97,7 +97,7 @@ public class PlayerAcsion : MonoBehaviour
         //アイテムボックス
         if (Input.GetKeyDown(KeyCode.E))
         {
-           ShowCanvase.OpenItemBox();
+           //ShowCanvase.OpenItemBox();
         }
     }
 

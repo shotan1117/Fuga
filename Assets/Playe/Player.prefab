@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4133373645853903851}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0055, y: 0.468, z: 0.17}
+  m_LocalPosition: {x: 0, y: 0.47, z: 0.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64,7 +64,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
+  near clip plane: 0.05
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -130,7 +130,7 @@ Transform:
   - {fileID: 1383340793722469673}
   - {fileID: 7655072752614984347}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 1.3040501, y: 3.1816885, z: 0.27023852}
 --- !u!33 &1416176788735070883
 MeshFilter:
@@ -225,7 +225,6 @@ MonoBehaviour:
   playersiderotate: 1
   PlayerAnimator: {fileID: 564710890119364532}
   cam: {fileID: 4133373645853903851}
-  PlayerAcsion: {fileID: 3634507249974051871}
 --- !u!114 &3634507249974051871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +240,8 @@ MonoBehaviour:
   parentObj: {fileID: 1034381152229280905}
   BoxCollider: {fileID: 6608952443115457437}
   parentRigidBody: {fileID: 6732608752975382047}
-  playerTest: {fileID: 0}
+  ShowCanvase: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!95 &4071115225018016337
 Animator:
   serializedVersion: 5
@@ -914,7 +914,7 @@ CapsuleCollider:
   m_Radius: 0.2
   m_Height: 1.7
   m_Direction: 1
-  m_Center: {x: 0, y: 0.8, z: 0}
+  m_Center: {x: 0, y: 0.8, z: 0.05}
 --- !u!4 &7655072752614984347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 98941b28403695141bb34831b5a5b1c1, type: 3}
