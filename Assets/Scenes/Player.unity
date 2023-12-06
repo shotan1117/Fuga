@@ -399,7 +399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4caa103c3924c478acbe227b38577a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThisItemNo: 200
+  MyItemNo: 200
+  Item: {fileID: 3794727982979246386, guid: d1ed3eded450484449c74251385b4465, type: 3}
 --- !u!65 &530765278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1174,7 +1175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4caa103c3924c478acbe227b38577a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThisItemNo: 4
+  MyItemNo: 4
+  Item: {fileID: 0}
 --- !u!1 &1563718956
 GameObject:
   m_ObjectHideFlags: 0
