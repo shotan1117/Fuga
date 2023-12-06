@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43bbd7f7c11bcf841ae4db8dd9084682, type: 3}
-  m_Name: "25 \u5199\u771F\u305F\u3066\u306E\u5199\u771F"
+  m_Name: "\u5199\u771F\u305F\u3066\u306E\u5199\u771F"
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   type: 2
-  ItemID: 25
+  ItemID: 24
   name: "\u5199\u771F\u305F\u3066\u306E\u5199\u771F\r\r"
   description: "Dear you\n\u30FC\uFF1E\u30004511821\u3000\n\u30FC\uFF1E\u3000\u2661\u25C7118\u2664\u2667\r\n"
   used: 0
