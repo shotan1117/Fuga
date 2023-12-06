@@ -45,14 +45,12 @@ public class PlayerAcsion : MonoBehaviour
                 RaycastHit hit;
                 if( Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance)) 
                 {
-                    Debug.Log("s");
                     if (hit.collider.CompareTag("Object"))
                     {
                         ObjectCatch(hit.collider);
                     }
                     if(hit.collider.CompareTag("Item"))
                     {
-                        Debug.Log("a");
                         Itemaddition(hit.collider);
                     }
                 }
@@ -95,7 +93,6 @@ public class PlayerAcsion : MonoBehaviour
         {
       
             inventory.AddItem(item.i, 1);
-            Debug.Log("a");
             Destroy(other.gameObject);
         }
     }
