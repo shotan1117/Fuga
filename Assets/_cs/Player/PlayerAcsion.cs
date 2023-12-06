@@ -45,12 +45,14 @@ public class PlayerAcsion : MonoBehaviour
                 RaycastHit hit;
                 if( Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance)) 
                 {
-                    if (hit.collider.tag == "Object")
+                    Debug.Log("s");
+                    if (hit.collider.CompareTag("Object"))
                     {
                         ObjectCatch(hit.collider);
                     }
-                    if(hit.collider.tag == "Item")
+                    if(hit.collider.CompareTag("Item"))
                     {
+                        Debug.Log("a");
                         Itemaddition(hit.collider);
                     }
                 }
@@ -88,10 +90,12 @@ public class PlayerAcsion : MonoBehaviour
     private void Itemaddition(Collider other)
     {
         //ƒAƒCƒeƒ€Ši”[
-        var item = other.gameObject.GetComponent<item>();
+        var item = other.gameObject.GetComponent<itemData>();
         if (item)
         {
-            inventory.AddItem(item.itemm, 1);
+      
+            inventory.AddItem(item.i, 1);
+            Debug.Log("a");
             Destroy(other.gameObject);
         }
     }
