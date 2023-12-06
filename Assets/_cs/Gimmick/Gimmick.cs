@@ -5,14 +5,22 @@ using UnityEngine;
 public class Gimmick : MonoBehaviour
 {
     [SerializeField]
-    private int ThisItemNo;
+    private int MyItemNo;
+
+    [SerializeField]
+    private GameObject Item;
     // Start is called before the first frame update
 
     public void UseObject(int itemNo)
     {
-        if (itemNo == ThisItemNo)
+        if (itemNo == MyItemNo)
         {
             Destroy(this.gameObject);
+            if (Item != null)
+            {
+                Instantiate(Item, transform.position, Quaternion.identity);
+            }
         }
+        
     }
 }
