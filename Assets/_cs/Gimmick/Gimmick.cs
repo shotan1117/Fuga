@@ -20,7 +20,6 @@ public class Gimmick : MonoBehaviour
             {
                 Instantiate(Item, transform.position, Quaternion.identity);
             }
-        }
-        
+        }  
     }
 }
