@@ -276,30 +276,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3, y: 0.3, z: 0.3}
   m_Center: {x: 0, y: 0.15, z: 0}
---- !u!1 &112943821 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8032926682005648466, guid: 79cd82e91b47bf945923fc34f3635b91, type: 3}
-  m_PrefabInstance: {fileID: 1901836369}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &112943825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7219658250034376424, guid: 79cd82e91b47bf945923fc34f3635b91, type: 3}
   m_PrefabInstance: {fileID: 1901836369}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &112943826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112943821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4caa103c3924c478acbe227b38577a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyItemNo: 4
-  Item: {fileID: 1806965823}
 --- !u!1 &134379851
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 192499228}
   - component: {fileID: 192499227}
+  - component: {fileID: 192499229}
   m_Layer: 0
   m_Name: GimmickObject2
   m_TagString: Untagged
@@ -474,6 +456,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &192499229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192499226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4caa103c3924c478acbe227b38577a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyItemNo: 4
+  Item: {fileID: 1806965823}
 --- !u!1 &202894979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,10 +1147,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2283616363265053106, guid: c028562a0c2915a42800479af6c57a36, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 975183922}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c028562a0c2915a42800479af6c57a36, type: 3}
 --- !u!1001 &581608609
 PrefabInstance:
@@ -2238,30 +2231,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyItemNo: 6
   Item: {fileID: 0}
---- !u!1 &975183917 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2283616363265053106, guid: c028562a0c2915a42800479af6c57a36, type: 3}
-  m_PrefabInstance: {fileID: 563716055}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &975183921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3635862942109730600, guid: c028562a0c2915a42800479af6c57a36, type: 3}
   m_PrefabInstance: {fileID: 563716055}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &975183922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 975183917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4caa103c3924c478acbe227b38577a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyItemNo: 4
-  Item: {fileID: 0}
 --- !u!1001 &984254332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5271,10 +5245,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8032926682005648466, guid: 79cd82e91b47bf945923fc34f3635b91, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 112943826}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79cd82e91b47bf945923fc34f3635b91, type: 3}
 --- !u!1 &1924233207
 GameObject:
@@ -30256,9 +30227,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2131748178}
   - component: {fileID: 2131748177}
+  - component: {fileID: 2131748179}
   m_Layer: 0
   m_Name: GimmickObject1
-  m_TagString: Untagged
+  m_TagString: Gimmick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30300,3 +30272,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2131748179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131748176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4caa103c3924c478acbe227b38577a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyItemNo: 4
+  Item: {fileID: 0}
