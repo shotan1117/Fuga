@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace SojaExiles
-
 {
+	
 	public class opencloseDoor : MonoBehaviour
 	{
 		public Animator openandclose;
 		public bool open;
 		public Transform Player;
 
+        [SerializeField]
+        AudioClip openclip;
+
+        private AudioSource audiosource;
+
 		void Start()
 		{
 			open = false;
+			audiosource = GetComponent<AudioSource>();
 		}
 
 		void OnMouseOver()
@@ -49,23 +55,14 @@ namespace SojaExiles
 			}
 
 		}
-		//public void Heavensdoar()
-		//{
-  //          if (open == false)
-  //          {               
-  //                  StartCoroutine(opening());
-  //          }
-  //          else if (open == true)
-  //          {                                  
-  //                  StartCoroutine(closing());
-  //          }
-  //      }
+		
 		IEnumerator opening()
 		{
 			print("you are opening the door");
 			openandclose.Play("Opening");
 			open = true;
-			yield return new WaitForSeconds(.5f);
+			audiosource.PlayOneShot(openclip);
+            yield return new WaitForSeconds(.5f);
 		}
 
 		IEnumerator closing()
@@ -73,7 +70,8 @@ namespace SojaExiles
 			print("you are closing the door");
 			openandclose.Play("Closing");
 			open = false;
-			yield return new WaitForSeconds(.5f);
+            audiosource.PlayOneShot(openclip);
+            yield return new WaitForSeconds(.5f);
 		}
 	}
 }

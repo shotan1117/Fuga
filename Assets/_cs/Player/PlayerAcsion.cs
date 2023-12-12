@@ -93,7 +93,7 @@ public class PlayerAcsion : MonoBehaviour
         HaveObject.constraints = RigidbodyConstraints.FreezePositionY;
         HaveObject.isKinematic = true;
         HaveObject.transform.SetParent(parentObj.transform, true);
-        HaveObject.transform.localPosition = new Vector3(0, 0.1f, 0.3f); 
+        HaveObject.transform.localPosition = new Vector3(0, 0.1f, 0.41f); 
         HaveObject.transform.rotation = this.transform.rotation;
     }
 
@@ -101,7 +101,6 @@ public class PlayerAcsion : MonoBehaviour
     {
         //ƒAƒCƒeƒ€Ši”[
         var item = other.gameObject.GetComponent<itemData>();
-         
         if (item)
         {
             inventory.AddItem(item.i, 1);
