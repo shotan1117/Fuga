@@ -10,11 +10,15 @@ namespace SojaExiles
 		public Animator openandclose1;
 		public bool open;
 		public Transform Player;
+        [SerializeField]
+        AudioClip openclip;
 
-		void Start()
+        private AudioSource audiosource;
+        void Start()
 		{
 			open = false;
-		}
+            audiosource = GetComponent<AudioSource>();
+        }
 
 		void OnMouseOver()
 		{
@@ -55,7 +59,8 @@ namespace SojaExiles
 			print("you are opening the door");
 			openandclose1.Play("Opening 1");
 			open = true;
-			yield return new WaitForSeconds(.5f);
+            audiosource.PlayOneShot(openclip);
+            yield return new WaitForSeconds(.5f);
 		}
 
 		IEnumerator closing()
@@ -63,7 +68,8 @@ namespace SojaExiles
 			print("you are closing the door");
 			openandclose1.Play("Closing 1");
 			open = false;
-			yield return new WaitForSeconds(.5f);
+            audiosource.PlayOneShot(openclip);
+            yield return new WaitForSeconds(.5f);
 		}
 
 
