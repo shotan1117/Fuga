@@ -11,10 +11,11 @@ namespace SojaExiles
 		public Animator Closetopenandclose;
 		public bool open;
 		public Transform Player;
-
-		void Start()
+       
+        void Start()
 		{
 			open = false;
+			
 		}
 
 		void OnMouseOver()
@@ -55,7 +56,7 @@ namespace SojaExiles
 		{
 			print("you are opening the door");
 			Closetopenandclose.Play("ClosetOpening");
-			open = true;
+            open = true;
 			yield return new WaitForSeconds(.5f);
 		}
 
@@ -63,7 +64,7 @@ namespace SojaExiles
 		{
 			print("you are closing the door");
 			Closetopenandclose.Play("ClosetClosing");
-			open = false;
+            open = false;
 			yield return new WaitForSeconds(.5f);
 		}
 

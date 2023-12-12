@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 7296751938604968508}
   - component: {fileID: 7296751938604968510}
   - component: {fileID: 7296751938604968511}
-  - component: {fileID: 2135993216607510132}
+  - component: {fileID: 8828436059087666719}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -313,7 +313,7 @@ MonoBehaviour:
   open: 0
   Player: {fileID: 0}
   openclip: {fileID: 8300000, guid: 619332c3bc8b5fd45a842c32849b1c8e, type: 3}
---- !u!82 &2135993216607510132
+--- !u!82 &8828436059087666719
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
