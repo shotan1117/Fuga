@@ -56,7 +56,6 @@ namespace SojaExiles
 
 		IEnumerator opening()
 		{
-			print("you are opening the door");
 			openandclose1.Play("Opening 1");
 			open = true;
             audiosource.PlayOneShot(openclip);
@@ -65,7 +64,6 @@ namespace SojaExiles
 
 		IEnumerator closing()
 		{
-			print("you are closing the door");
 			openandclose1.Play("Closing 1");
 			open = false;
             audiosource.PlayOneShot(openclip);
