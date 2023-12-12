@@ -41,6 +41,8 @@ public class Keypad : MonoBehaviour
     private string currentInput;
     private bool displayingResult = false;
     private bool accessWasGranted = false;
+        public Animator Anim;
+        public Animator Anim2;
 
     private void Awake()
     {
@@ -122,7 +124,10 @@ public class Keypad : MonoBehaviour
         accessWasGranted = true;
         keypadDisplayText.text = accessGrantedText;
         onAccessGranted?.Invoke();
-        panelMesh.material.SetVector("_EmissionColor", screenGrantedColor * screenIntensity);
+            print("you are opening the door");
+            Anim.Play("Opening 1");
+            Anim2.Play("Opening");
+            panelMesh.material.SetVector("_EmissionColor", screenGrantedColor * screenIntensity);
         audioSource.PlayOneShot(accessGrantedSfx);
     }
 
