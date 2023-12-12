@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
     private void WalkSound()
     {
         //ˆÚ“®Žž‚Ì‚ÝƒTƒEƒ“ƒh‚ð–Â‚ç‚·
-        if (rb.velocity.magnitude != 0)
+        if (move.x != 0 || move.y != 0)
         {
             if (!audioSource.isPlaying)
             {
