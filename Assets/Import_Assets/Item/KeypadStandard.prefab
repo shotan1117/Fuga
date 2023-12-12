@@ -421,7 +421,7 @@ MonoBehaviour:
   onAccessDenied:
     m_PersistentCalls:
       m_Calls: []
-  keypadCombo: 5567
+  keypadCombo: 251521495
   accessGrantedText: Granted
   accessDeniedText: Denied
   displayResultTime: 1
