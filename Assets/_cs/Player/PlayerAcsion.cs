@@ -17,9 +17,14 @@ public class PlayerAcsion : MonoBehaviour
     [SerializeField]
     Rigidbody parentRigidBody;
 
+    [SerializeField]
+    AudioClip clip;
+
     //キャッチしたオブジェクトの取得
     private Rigidbody HaveObject;
     private Collider ObjectCollider;
+
+    public AudioSource audioSource;
 
     //アイテムボックス
     public ShowCanvas ShowCanvase;
@@ -34,6 +39,7 @@ public class PlayerAcsion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         OpenBox();
         if (Time.timeScale== 0) { return; }
         if (Input.GetMouseButtonDown(0))
@@ -53,6 +59,7 @@ public class PlayerAcsion : MonoBehaviour
                     else  if(hit.collider.CompareTag("Item"))
                     {
                         Itemaddition(hit.collider);
+                       
                     }
                     else if (hit.collider.TryGetComponent(out KeypadButton keypadButton))
                     {
@@ -94,10 +101,11 @@ public class PlayerAcsion : MonoBehaviour
     {
         //アイテム格納
         var item = other.gameObject.GetComponent<itemData>();
+         
         if (item)
         {
-      
             inventory.AddItem(item.i, 1);
+            audioSource.PlayOneShot(clip);
             Destroy(other.gameObject);
         }
     }
