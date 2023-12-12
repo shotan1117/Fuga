@@ -1,3 +1,4 @@
+using NavKeypad;
 using SojaExiles;
 using System;
 using System.Collections;
@@ -49,9 +50,13 @@ public class PlayerAcsion : MonoBehaviour
                     {
                         ObjectCatch(hit.collider);
                     }
-                    if(hit.collider.CompareTag("Item"))
+                    else  if(hit.collider.CompareTag("Item"))
                     {
                         Itemaddition(hit.collider);
+                    }
+                    else if (hit.collider.TryGetComponent(out KeypadButton keypadButton))
+                    {
+                        keypadButton.PressButton();
                     }
                 }
             }
