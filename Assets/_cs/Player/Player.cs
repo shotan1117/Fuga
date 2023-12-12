@@ -10,11 +10,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float playersiderotate;
 
+    [SerializeField]
+    AudioClip clip;
     Vector2 Rote;
     public PlayerAnimator PlayerAnimator;
     public GameObject cam;
     Quaternion cameraRot, characterRot;
     private Rigidbody rb;
+    private AudioSource audioSource;
     private Vector2 move;
 
     //角度の制限用
@@ -25,6 +28,7 @@ public class Player : MonoBehaviour
         cameraRot = cam.transform.localRotation;
         characterRot = transform.localRotation;
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -46,7 +50,8 @@ public class Player : MonoBehaviour
         cameraRot = ClampRotation(cameraRot);
         cam.transform.localRotation = cameraRot;
         transform.localRotation = characterRot;
-        PlayerAnimator.Animation(move);       
+        PlayerAnimator.Animation(move);
+        WalkSound();
     }
 
     private void FixedUpdate()
@@ -56,7 +61,7 @@ public class Player : MonoBehaviour
             rb.velocity = Vector3.zero;
             return;
         }
-        rb.velocity = ((transform.right * move.x) * speed) + ((transform.forward * move.y) * speed) + new Vector3(0, rb.velocity.y, 0) ;
+        rb.velocity = ((transform.right * move.x) * speed) + ((transform.forward * move.y) * speed) + new Vector3(0, rb.velocity.y, 0);
     }
 
     //角度制限関数の作成
@@ -76,5 +81,22 @@ public class Player : MonoBehaviour
 
         return q;
     }
-    
+    private void WalkSound()
+    {
+        //移動時のみサウンドを鳴らす
+        if (move.x != 0 || move.y != 0)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(clip);
+            }
+        }
+        else
+        {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+        }
+    }
 }
