@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 303874903521465505}
   - component: {fileID: 241942565335782368}
   - component: {fileID: 8607069755792419628}
+  - component: {fileID: 6879360724411113705}
   m_Layer: 0
   m_Name: MirrorCamera_04
   m_TagString: Untagged
@@ -203,3 +204,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1a5dbb258e5604590a66fe25070752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6879360724411113705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392335711791672169}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 1, z: 18}
+  m_Center: {x: 0, y: -1, z: 3}
