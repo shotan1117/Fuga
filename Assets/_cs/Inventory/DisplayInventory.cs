@@ -36,8 +36,8 @@ public class DisplayInventory : MonoBehaviour
             
             if (itemDisplayed.ContainsKey(inventory.container[i]))
             {
-                itemDisplayed[inventory.container[i]].GetComponentInChildren<TextMeshProUGUI>().text=
-                    inventory.container[i].amount.ToString("n0");
+                //itemDisplayed[inventory.container[i]].GetComponentInChildren<TextMeshProUGUI>().text=
+                 //   inventory.container[i].amount.ToString("n0");
             }
             else
             {
@@ -47,8 +47,8 @@ public class DisplayInventory : MonoBehaviour
                 obj.GetComponent<RectTransform>().localPosition
                     = GetPosition(i);
 
-                obj.GetComponentInChildren<TextMeshProUGUI>().text =
-                    inventory.container[i].amount.ToString("n0");
+               // obj.GetComponentInChildren<TextMeshProUGUI>().text =
+                   // inventory.container[i].amount.ToString("n0");
                 itemDisplayed.Add(inventory.container[i], obj);
 
                 var icon = obj.GetComponent<ItemUIIcon>();
@@ -68,8 +68,8 @@ public class DisplayInventory : MonoBehaviour
             obj.GetComponent<RectTransform>().localPosition
                 =GetPosition(i);
 
-            obj.GetComponentInChildren<TextMeshProUGUI>().text=
-                inventory.container[i].amount.ToString("n0");
+           // obj.GetComponentInChildren<TextMeshProUGUI>().text=
+              //  inventory.container[i].amount.ToString("n0");
         }
     }
 
