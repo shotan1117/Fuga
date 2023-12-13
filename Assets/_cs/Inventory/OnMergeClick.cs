@@ -10,8 +10,9 @@ public class OnMergeClick : MonoBehaviour
     public bool clicked=false;
     public ItemObject item1;
     public ItemObject item2;
-   public  ItemObject[] MergedItem;
-
+    [SerializeField]
+     ItemObject[] MergedItem;
+   
     public DisplayInventory d_inv;
 
 
