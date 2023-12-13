@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8683697499593805710}
   - component: {fileID: 7704810382962198136}
+  - component: {fileID: 4592849796055598229}
   m_Layer: 0
   m_Name: MirrorCamera_07
   m_TagString: Untagged
@@ -83,6 +84,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &4592849796055598229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2520413423026105376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1a5dbb258e5604590a66fe25070752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6333009101168653148
 GameObject:
   m_ObjectHideFlags: 0
