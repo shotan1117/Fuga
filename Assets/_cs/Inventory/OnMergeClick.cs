@@ -10,12 +10,25 @@ public class OnMergeClick : MonoBehaviour
     public bool clicked=false;
     public ItemObject item1;
     public ItemObject item2;
-   public  ItemObject MergedItem;
-
+    [SerializeField]
+     ItemObject[] MergedItem;
+   
     public DisplayInventory d_inv;
+
+
+    public int[,] mergeList = new int[30, 30];
     // Start is called before the first frame update
     void Start()
     {
+        mergeList[3, 6] = 9;
+        mergeList[6, 3] = 9;
+        mergeList[10, 11] = 12;
+        mergeList[11, 10] = 12;
+        mergeList[14, 15] = 16;
+        mergeList[15, 14] = 16;
+        mergeList[18, 19] = 20;
+        mergeList[19, 18] = 20;
+
         
     }
 
@@ -26,12 +39,20 @@ public class OnMergeClick : MonoBehaviour
             if (item1 != null && item2 != null)
 
             {
-                if (item1.ItemID == 1 && item2.ItemID == 2)
+                if (mergeList[item1.ItemID, item2.ItemID] != 0
+                    ||
+                    mergeList[item2.ItemID, item1.ItemID] != 0
+                    )
                 {
-                    print("?!?!?!");
-                    Destroy(GameObject.Find("Prefab1"+"(Clone)"));
-                    Destroy(GameObject.Find("Prefab2" + "(Clone)"));
-                    player_inv.AddItem(MergedItem, 1);
+                    Destroy(GameObject.Find(item1.name + "(Clone)"));
+                    Destroy(GameObject.Find(item2.name + "(Clone)"));
+                    for(int i = 0; i <MergedItem.Length; i++)
+                    {
+                        if (MergedItem[i].ItemID== mergeList[item1.ItemID, item2.ItemID])
+                        {
+                            player_inv.AddItem(MergedItem[i], 1);
+                        }
+                    }
                     for (int i = 0; i < player_inv.container.Count; i++)
                     {
                         if (player_inv.container[i].Item == item1)
@@ -39,8 +60,6 @@ public class OnMergeClick : MonoBehaviour
                             player_inv.container.Remove(player_inv.container
                                [i]);
                             d_inv.itemDisplayed.Remove(player_inv.container[i]);
-
-
 
                         }
                     }
@@ -55,44 +74,12 @@ public class OnMergeClick : MonoBehaviour
 
                         }
                     }
-
-
                     clicked = false;
+
                 }
+                 
 
-                if (item1.ItemID == 2 && item2.ItemID ==1)
-                {
-                    print("?!?!?!");
-                    Destroy(GameObject.Find("Prefab1" + "(Clone)"));
-                    Destroy(GameObject.Find("Prefab2" + "(Clone)"));
-                    player_inv.AddItem(MergedItem, 1);
-                    for (int i = 0; i < player_inv.container.Count; i++)
-                    {
-                        if (player_inv.container[i].Item == item1)
-                        {
-                            player_inv.container.Remove(player_inv.container
-                               [i]);
-                            d_inv.itemDisplayed.Remove(player_inv.container[i]);
-
-
-
-                        }
-                    }
-                    for (int i = 0; i < player_inv.container.Count; i++)
-                    {
-                        if (player_inv.container[i].Item == item2)
-                        {
-                            player_inv.container.Remove(player_inv.container
-                                [i]);
-                            d_inv.itemDisplayed.Remove(player_inv.container[i]);
-
-
-                        }
-                    }
-
-
-                    clicked = false;
-                }
+               
             }
         }
     }
