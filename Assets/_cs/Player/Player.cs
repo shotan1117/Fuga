@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private AudioSource audioSource;
     private Vector2 move;
+    private Gimmick gimmick;
 
     //äpìxÇÃêßå¿óp
     float minX = -90f, maxX = 50f;
@@ -97,6 +98,29 @@ public class Player : MonoBehaviour
             {
                 audioSource.Stop();
             }
+        }
+    }
+    public void UseItem(int itemID)
+    {
+        if (gimmick != null)
+        {
+            gimmick.UseObject(itemID);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Gimmick"))
+        {
+            Debug.Log("a");
+            gimmick = other.GetComponent<Gimmick>();
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Gimmick"))
+        {
+            gimmick = null;
         }
     }
 }
