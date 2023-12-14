@@ -112,7 +112,6 @@ public class Player : MonoBehaviour
 
         if (other.CompareTag("Gimmick"))
         {
-            Debug.Log("a");
             gimmick = other.GetComponent<Gimmick>();
         }
     }

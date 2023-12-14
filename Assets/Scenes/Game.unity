@@ -5233,6 +5233,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!114 &1788174427 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 83459877286327447, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
+  m_PrefabInstance: {fileID: 1900858336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516c16a2c5a0eb448a4e4ab371bfa93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1806965823 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3019568617730713240, guid: 5dd5a1ab6047d4848b7668734815016f, type: 3}
@@ -5389,6 +5400,10 @@ PrefabInstance:
       propertyPath: Anim2
       value: 
       objectReference: {fileID: 902897616}
+    - target: {fileID: 2303921294396319334, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
+      propertyPath: keypadCombo
+      value: 251521495
+      objectReference: {fileID: 0}
     - target: {fileID: 2303921294396319335, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
       propertyPath: m_Name
       value: KeypadStandard
@@ -5468,7 +5483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034381152229280905, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.883
+      value: 29.803
       objectReference: {fileID: 0}
     - target: {fileID: 1034381152229280905, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5476,11 +5491,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034381152229280905, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.603
+      value: 1.157
       objectReference: {fileID: 0}
     - target: {fileID: 1034381152229280905, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1034381152229280905, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5488,7 +5503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034381152229280905, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1034381152229280905, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_LocalRotation.z
@@ -5496,15 +5511,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034381152229280905, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 1.3040501
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1034381152229280905, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 3.1816885
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1034381152229280905, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.27023852
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1124992234503684266, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5870,6 +5885,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7927410576926862883, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 11400000, guid: 21680d620f1421c468f231e948ef2a34, type: 2}
+    - target: {fileID: 7927410576926862883, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
+      propertyPath: ShowCanvase
+      value: 
+      objectReference: {fileID: 1487158197}
     - target: {fileID: 7944768011421606056, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -31085,7 +31108,7 @@ PrefabInstance:
     - target: {fileID: 1327676042340883756, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1788174427}
     - target: {fileID: 4052014104696959100, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
       propertyPath: m_Enabled
       value: 0
