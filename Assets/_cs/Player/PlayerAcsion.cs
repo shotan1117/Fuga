@@ -3,6 +3,7 @@ using SojaExiles;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -30,7 +31,7 @@ public class PlayerAcsion : MonoBehaviour
     public ShowCanvas ShowCanvase;
     public InventoryObject inventory;
 
-
+    private Gimmick gimmick;
     private void Start()
     {
         BoxCollider.enabled = false;
@@ -38,7 +39,6 @@ public class PlayerAcsion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
         OpenBox();
         if (Time.timeScale== 0) { return; }
         if (Input.GetMouseButtonDown(0))
@@ -46,23 +46,24 @@ public class PlayerAcsion : MonoBehaviour
             // オブジェクトを持っていないときはオブジェクトを持つ
             if(HaveObject == null)
             {
-                float distance = 10;
-                //foreach (var hit in hits)
+                float distance = 15;
                 RaycastHit hit;
                 if( Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance)) 
                 {
-                    if (hit.collider.CompareTag("Object"))
+                    switch(hit.collider.tag)
                     {
-                        ObjectCatch(hit.collider);
-                    }
-                    else  if(hit.collider.CompareTag("Item"))
-                    {
-                        Itemaddition(hit.collider);
-                       
-                    }
-                    else if (hit.collider.TryGetComponent(out KeypadButton keypadButton))
-                    {
-                        keypadButton.PressButton();
+                        case "Object":
+                            ObjectCatch(hit.collider);
+                            break;
+
+                        case "Item":
+                            Itemaddition(hit.collider);
+                            break;
+
+                        case "Gimmick":
+                            ShowCanvase.OpenItemBox();
+                            gimmick = hit.collider.GetComponent<Gimmick>();
+                            break;
                     }
                 }
             }
@@ -77,6 +78,7 @@ public class PlayerAcsion : MonoBehaviour
                 HaveObject.velocity = parentRigidBody.velocity;
                 HaveObject = null;
                 ObjectCollider = null;
+                gimmick = null;
             }
         }
       
@@ -124,5 +126,14 @@ public class PlayerAcsion : MonoBehaviour
         inventory.Using_Item = null;
         inventory.Merging_Item_First = null;
         inventory.Merging_Item_Second = null;
-    }   
+    }
+
+    public void UseItem(int itemID)
+    {
+        //アイテム使用
+        if (gimmick != null)
+        {
+            gimmick.UseObject(itemID);
+        }
+    }
 }
