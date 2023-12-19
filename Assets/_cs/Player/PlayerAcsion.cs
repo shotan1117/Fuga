@@ -41,45 +41,54 @@ public class PlayerAcsion : MonoBehaviour
     {
         OpenBox();
         if (Time.timeScale== 0) { return; }
-        if (Input.GetMouseButtonDown(0))
+        
         {
             // オブジェクトを持っていないときはオブジェクトを持つ
-            if(HaveObject == null)
+            //if(HaveObject == null)
             {
                 float distance = 15;
                 RaycastHit hit;
                 if( Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance)) 
                 {
-                    switch(hit.collider.tag)
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        case "Object":
-                            ObjectCatch(hit.collider);
-                            break;
+                        switch (hit.collider.tag)
+                        {
+                            case "Object":
+                                ObjectCatch(hit.collider);
+                                break;
 
-                        case "Item":
-                            Itemaddition(hit.collider);
-                            break;
+                            case "Item":
+                                Itemaddition(hit.collider);
+                                break;
 
-                        case "Gimmick":
-                            ShowCanvase.OpenItemBox();
-                            gimmick = hit.collider.GetComponent<Gimmick>();
-                            break;
+                            case "Gimmick":
+                                ShowCanvase.OpenItemBox();
+                                gimmick = hit.collider.GetComponent<Gimmick>();
+                                break;
+
+                        }
+                    }
+                    else
+                    {
+                        HaveObject.constraints = 0;
+                        HaveObject.isKinematic = false;
+                        ObjectCollider.enabled = true;
+                        BoxCollider.enabled = false;
+                        HaveObject.transform.SetParent(null, true);
+                        HaveObject.velocity = parentRigidBody.velocity;
+                        HaveObject = null;
+                        ObjectCollider = null;
+                        gimmick = null;
+                    }
+
+                    if(hit.collider.tag == "Gimmick")
+                    {
+
                     }
                 }
             }
             // オブジェクトを持っていないときはオブジェクトを離す
-            else
-            {
-                HaveObject.constraints = 0;
-                HaveObject.isKinematic = false;
-                ObjectCollider.enabled  = true;
-                BoxCollider.enabled = false;
-                HaveObject.transform.SetParent(null, true);
-                HaveObject.velocity = parentRigidBody.velocity;
-                HaveObject = null;
-                ObjectCollider = null;
-                gimmick = null;
-            }
         }
       
     }
