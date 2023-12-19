@@ -71,20 +71,21 @@ public class PlayerAcsion : MonoBehaviour
                     }
                     else
                     {
-                        HaveObject.constraints = 0;
-                        HaveObject.isKinematic = false;
-                        ObjectCollider.enabled = true;
-                        BoxCollider.enabled = false;
-                        HaveObject.transform.SetParent(null, true);
-                        HaveObject.velocity = parentRigidBody.velocity;
-                        HaveObject = null;
-                        ObjectCollider = null;
-                        gimmick = null;
+                        //HaveObject.constraints = 0;
+                        //HaveObject.isKinematic = false;
+                        //ObjectCollider.enabled = true;
+                        //BoxCollider.enabled = false;
+                        //HaveObject.transform.SetParent(null, true);
+                        //HaveObject.velocity = parentRigidBody.velocity;
+                        //HaveObject = null;
+                        //ObjectCollider = null;
+                        //gimmick = null;
                     }
 
                     if(hit.collider.tag == "Gimmick")
                     {
-
+                        GameObject.Find("hintText").GetComponent<UItext>().num=
+                       hit.collider.GetComponent<Gimmick>().MyItemNo;
                     }
                 }
             }

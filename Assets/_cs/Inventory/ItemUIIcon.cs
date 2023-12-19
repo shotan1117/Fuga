@@ -20,8 +20,10 @@ public class ItemUIIcon : MonoBehaviour
             .item = item;
         GameObject.Find("Item_Image").GetComponent<itemImage>().item = item;
 
+
         GameObject.Find("Item_Image").GetComponent<Image>().sprite =
        GameObject.Find(item.name + "(Clone)").GetComponent<Image>().sprite;
+
         if (GameObject.Find("Button_Merge").GetComponent<OnMergeClick>()
             .clicked==false)
         {
@@ -34,7 +36,7 @@ public class ItemUIIcon : MonoBehaviour
             GameObject.Find("Button_Merge").GetComponent<OnMergeClick>()
            .item2= item;
         }
-       
+        GameObject.Find("Item_Image").GetComponent<Image>().sprite = null;
     }
   
 }

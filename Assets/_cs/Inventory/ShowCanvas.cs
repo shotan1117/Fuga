@@ -5,6 +5,8 @@ using UnityEngine;
 public class ShowCanvas : MonoBehaviour
 {
     Canvas cv;
+
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,8 @@ public class ShowCanvas : MonoBehaviour
             cv.enabled = false;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+
+
         }
         else if ( cv.enabled == false)
         {

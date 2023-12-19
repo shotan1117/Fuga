@@ -5,8 +5,10 @@ using UnityEngine;
 public class Gimmick : MonoBehaviour
 {
     [SerializeField]
-    private int MyItemNo;
+    private int myItemNo;
 
+    public int MyItemNo
+    {  get { return myItemNo; } }
     [SerializeField]
     private GameObject Item;
 
@@ -34,4 +36,7 @@ public class Gimmick : MonoBehaviour
             }
         }  
     }
+   
+
+
 }
