@@ -25,5 +25,9 @@ public class OnUseClick : MonoBehaviour
     {
         inventory.UseItem(item);
         Player.UseItem(item.ItemID);
+        GameObject.Find("Item_Image").GetComponent<itemImage>().item=item;
+
+        GameObject.Find("Item_Image").GetComponent<Image>().sprite =
+       GameObject.Find(item.name + "(Clone)").GetComponent<Image>().sprite;
     }
 }

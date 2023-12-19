@@ -5518,6 +5518,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5224498709130224546, guid: 0edc7311521560440a8dc41072b589d0, type: 3}
   m_PrefabInstance: {fileID: 585777461}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1851159163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 821020338263016769, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
+  m_PrefabInstance: {fileID: 1976278364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1851159164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851159163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac2bef0713b2dd4e84bbc23ecad0ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
 --- !u!1 &1858507493 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1522236235555568, guid: 4ef4628f5f55fbd43b9fd014cc065b34, type: 3}
@@ -31315,9 +31333,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventle
       objectReference: {fileID: 0}
+    - target: {fileID: 559731902093030791, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 559731902093030791, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 559731902093030791, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 559731902093030791, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 833416068472320839, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 369
+      value: 448
+      objectReference: {fileID: 0}
+    - target: {fileID: 833416068472320839, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 259
       objectReference: {fileID: 0}
     - target: {fileID: 1141546437406638438, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
       propertyPath: m_Color.b
@@ -31462,7 +31500,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 821020338263016769, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1851159164}
   m_SourcePrefab: {fileID: 100100000, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
 --- !u!1 &2030775641 stripped
 GameObject:

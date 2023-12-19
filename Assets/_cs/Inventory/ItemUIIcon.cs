@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemUIIcon : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class ItemUIIcon : MonoBehaviour
         D_inventory.SelectItem(item);
         GameObject.Find("Button_Use").GetComponent<OnUseClick>()
             .item = item;
+        GameObject.Find("Item_Image").GetComponent<itemImage>().item = item;
+
+        GameObject.Find("Item_Image").GetComponent<Image>().sprite =
+       GameObject.Find(item.name + "(Clone)").GetComponent<Image>().sprite;
         if (GameObject.Find("Button_Merge").GetComponent<OnMergeClick>()
             .clicked==false)
         {

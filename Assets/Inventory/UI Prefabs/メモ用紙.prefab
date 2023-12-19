@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8136804379747801310, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
       propertyPath: m_Name
-      value: "\u30E1\u30E2"
+      value: "\u30E1\u30E2\u7528\u7D19"
       objectReference: {fileID: 0}
     - target: {fileID: 8272170229767103566, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
       propertyPath: m_Pivot.x
@@ -103,7 +103,7 @@ PrefabInstance:
     - target: {fileID: 9189524543173128596, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8907375f6fa236748875aba39b0646f5, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 9189524543173128596, guid: 64cfdcfd8c95e77459692121930fc519, type: 3}
       propertyPath: m_Color.b
       value: 1
