@@ -52,7 +52,11 @@ public class PlayerAcsion : MonoBehaviour
                             ShowCanvase.OpenItemBox();
                             gimmick = hit.collider.GetComponent<Gimmick>();
                             break;
+                    }
 
+                    if (hit.collider.TryGetComponent(out KeypadButton keypadButton))
+                    {
+                        keypadButton.PressButton();
                     }
                 }
 
