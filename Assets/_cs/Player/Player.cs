@@ -100,26 +100,4 @@ public class Player : MonoBehaviour
             }
         }
     }
-    public void UseItem(int itemID)
-    {
-        if (gimmick != null)
-        {
-            gimmick.UseObject(itemID);
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-
-        if (other.CompareTag("Gimmick"))
-        {
-            gimmick = other.GetComponent<Gimmick>();
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Gimmick"))
-        {
-            gimmick = null;
-        }
-    }
 }

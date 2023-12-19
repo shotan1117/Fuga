@@ -8,7 +8,7 @@ public class OnUseClick : MonoBehaviour
 {
     public ItemObject item;
     public InventoryObject inventory;
-    public Player Player;
+    public PlayerAcsion Player;
     // Start is called before the first frame update
     void Start()
     {

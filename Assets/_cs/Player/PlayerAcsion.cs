@@ -30,7 +30,7 @@ public class PlayerAcsion : MonoBehaviour
     public ShowCanvas ShowCanvase;
     public InventoryObject inventory;
 
-
+    private Gimmick gimmick;
     private void Start()
     {
         BoxCollider.enabled = false;
@@ -60,6 +60,11 @@ public class PlayerAcsion : MonoBehaviour
                         Itemaddition(hit.collider);
                        
                     }
+                    else if(hit.collider.CompareTag("Gimmick"))
+                    {
+                        ShowCanvase.OpenItemBox();
+                        gimmick = hit.collider.GetComponent<Gimmick>();
+                    }
                     else if (hit.collider.TryGetComponent(out KeypadButton keypadButton))
                     {
                         keypadButton.PressButton();
@@ -77,6 +82,7 @@ public class PlayerAcsion : MonoBehaviour
                 HaveObject.velocity = parentRigidBody.velocity;
                 HaveObject = null;
                 ObjectCollider = null;
+                gimmick = null;
             }
         }
       
@@ -124,5 +130,14 @@ public class PlayerAcsion : MonoBehaviour
         inventory.Using_Item = null;
         inventory.Merging_Item_First = null;
         inventory.Merging_Item_Second = null;
-    }   
+    }
+
+    public void UseItem(int itemID)
+    {
+        //アイテム使用
+        if (gimmick != null)
+        {
+            gimmick.UseObject(itemID);
+        }
+    }
 }
