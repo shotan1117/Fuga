@@ -19,10 +19,9 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private AudioSource audioSource;
     private Vector2 move;
-    private Gimmick gimmick;
 
     //äpìxÇÃêßå¿óp
-    float minX = -90f, maxX = 50f;
+    float minX = -90f, maxX = 65f;
     // Start is called before the first frame update
     void Start()
     {

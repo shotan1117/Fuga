@@ -13,17 +13,10 @@ public class PlayerAcsion : MonoBehaviour
     Transform parentObj;
 
     [SerializeField]
-    BoxCollider BoxCollider;
-
-    [SerializeField]
     Rigidbody parentRigidBody;
 
     [SerializeField]
     AudioClip clip;
-
-    //キャッチしたオブジェクトの取得
-    private Rigidbody HaveObject;
-    private Collider ObjectCollider;
 
     public AudioSource audioSource;
 
@@ -34,7 +27,7 @@ public class PlayerAcsion : MonoBehaviour
     private Gimmick gimmick;
     private void Start()
     {
-        BoxCollider.enabled = false;
+       
     }
     // Update is called once per frame
     void Update()
@@ -43,69 +36,34 @@ public class PlayerAcsion : MonoBehaviour
         if (Time.timeScale== 0) { return; }
         
         {
-            // オブジェクトを持っていないときはオブジェクトを持つ
-            //if(HaveObject == null)
+            float distance = 10;
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance))
             {
-                float distance = 15;
-                RaycastHit hit;
-                if( Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance)) 
+                if (Input.GetMouseButtonDown(0))
                 {
-                    if (Input.GetMouseButtonDown(0))
+                    switch (hit.collider.tag)
                     {
-                        switch (hit.collider.tag)
-                        {
-                            case "Object":
-                                ObjectCatch(hit.collider);
-                                break;
+                        case "Item":
+                            Itemaddition(hit.collider);
+                            break;
 
-                            case "Item":
-                                Itemaddition(hit.collider);
-                                break;
+                        case "Gimmick":
+                            ShowCanvase.OpenItemBox();
+                            gimmick = hit.collider.GetComponent<Gimmick>();
+                            break;
 
-                            case "Gimmick":
-                                ShowCanvase.OpenItemBox();
-                                gimmick = hit.collider.GetComponent<Gimmick>();
-                                break;
-
-                        }
-                    }
-                    else
-                    {
-                        //HaveObject.constraints = 0;
-                        //HaveObject.isKinematic = false;
-                        //ObjectCollider.enabled = true;
-                        //BoxCollider.enabled = false;
-                        //HaveObject.transform.SetParent(null, true);
-                        //HaveObject.velocity = parentRigidBody.velocity;
-                        //HaveObject = null;
-                        //ObjectCollider = null;
-                        //gimmick = null;
-                    }
-
-                    if(hit.collider.tag == "Gimmick")
-                    {
-                        GameObject.Find("hintText").GetComponent<UItext>().num=
-                       hit.collider.GetComponent<Gimmick>().MyItemNo;
                     }
                 }
+
+                if (hit.collider.tag == "Gimmick")
+                {
+                    GameObject.Find("hintText").GetComponent<UItext>().num =
+                   hit.collider.GetComponent<Gimmick>().MyItemNo;
+                }
             }
-            // オブジェクトを持っていないときはオブジェクトを離す
         }
       
-    }
-
-    private void ObjectCatch(Collider othe)
-    {
-        //持てるオブジェクト取得
-        ObjectCollider = othe;
-        HaveObject = ObjectCollider.gameObject.GetComponent<Rigidbody>();
-        ObjectCollider.enabled = false;  
-        BoxCollider.enabled = true;
-        HaveObject.constraints = RigidbodyConstraints.FreezePositionY;
-        HaveObject.isKinematic = true;
-        HaveObject.transform.SetParent(parentObj.transform, true);
-        HaveObject.transform.localPosition = new Vector3(0, 0.1f, 0.41f); 
-        HaveObject.transform.rotation = this.transform.rotation;
     }
 
     private void Itemaddition(Collider other)
