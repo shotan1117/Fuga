@@ -38,16 +38,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0) { return; }
+        //入力
         Rote.x = Input.GetAxis("Mouse X") * playersiderotate;
-        //縦方向の視点変更は遅く
         Rote.y = Input.GetAxis("Mouse Y") * playersiderotate;
-
         move.x = Input.GetAxisRaw("Horizontal");
         move.y = Input.GetAxisRaw("Vertical");
         cameraRot *= Quaternion.Euler(-Rote.y, 0, 0);
         characterRot *= Quaternion.Euler(0, Rote.x, 0);
 
-        //Updateの中で作成した関数を呼ぶ
         cameraRot = ClampRotation(cameraRot);
         cam.transform.localRotation = cameraRot;
         transform.localRotation = characterRot;
@@ -57,18 +55,13 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {    
-        if(move.x ==0 && move.y ==0)
-        {
-            rb.velocity = Vector3.zero;
-            return;
-        }
+        //移動
         rb.velocity = ((transform.right * move.x) * speed) + ((transform.forward * move.y) * speed) + new Vector3(0, rb.velocity.y, 0);
     }
 
     //角度制限関数の作成
     private Quaternion ClampRotation(Quaternion q)
     {
-        //q = x,y,z,w (x,y,zはベクトル（量と向き）：wはスカラー（座標とは無関係の量）)
         q.x /= q.w;
         q.y /= q.w;
         q.z /= q.w;

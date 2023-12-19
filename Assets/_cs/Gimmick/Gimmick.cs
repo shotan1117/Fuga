@@ -9,6 +9,12 @@ public class Gimmick : MonoBehaviour
 
     [SerializeField]
     private GameObject Item;
+
+    [SerializeField]
+    AudioSource Audio;
+
+    [SerializeField]
+     AudioClip Clip;
     // Start is called before the first frame update
 
     public void UseObject(int itemNo)
@@ -16,9 +22,15 @@ public class Gimmick : MonoBehaviour
         if (itemNo == MyItemNo)
         {
             Destroy(this.gameObject);
+            //アイテムが入っていればアイテム生成
             if (Item != null)
             {
                 Instantiate(Item, transform.position, Quaternion.identity);
+            }
+            //サウンドが入っていればサウンドを鳴らす
+            if(Audio != null)
+            {
+                Audio.PlayOneShot(Clip);
             }
         }  
     }
