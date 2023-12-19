@@ -46,3 +46,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: ItemEffect
+    uniqueID: 3730328417
+    locked: 0
