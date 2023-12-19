@@ -134,6 +134,7 @@ public class PlayerAcsion : MonoBehaviour
         if (gimmick != null)
         {
             gimmick.UseObject(itemID);
+            ShowCanvase.OpenItemBox();
         }
     }
 }
