@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+       Cursor.visible = true;
     }
 
     // Update is called once per frame
