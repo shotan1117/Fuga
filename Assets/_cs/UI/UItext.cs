@@ -41,7 +41,7 @@ public class UItext : MonoBehaviour
         {
             textTime += Time.deltaTime;
         }
-        if(textTime > 10) 
+        if(textTime > 5) 
         {
             num = 0;
             textTime = 0;
