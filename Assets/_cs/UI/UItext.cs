@@ -6,6 +6,7 @@ public class UItext : MonoBehaviour
 {
     public Text text;
     public int num=0;
+    float textTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,9 @@ public class UItext : MonoBehaviour
     {
         switch (num)
         {
-
+            case 0:
+                text.text = "";
+                break;
             case 1:
             text.text = "ƒlƒW‚ªŠÉ‚ñ‚Å‚¢‚é...";
             break;
@@ -34,6 +37,16 @@ public class UItext : MonoBehaviour
 
         }
 
+        if(num!=0)
+        {
+            textTime += Time.deltaTime;
+        }
+        if(textTime > 10) 
+        {
+            num = 0;
+            textTime = 0;
+        
+        }
 
         }
     }
