@@ -28,7 +28,7 @@ public class Tenmetsu : MonoBehaviour
                 mesh.material.color = mesh.material.color + new Color32(0, 0, 0, 1);
             }
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
 
         }
     }
