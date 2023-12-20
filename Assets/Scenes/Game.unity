@@ -205,6 +205,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Item
       objectReference: {fileID: 0}
+    - target: {fileID: 120862, guid: cd8dfdfc9730cee438d3bdecd2b91ecf, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     - target: {fileID: 463878, guid: cd8dfdfc9730cee438d3bdecd2b91ecf, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -304,8 +308,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.3, y: 0.3, z: 0.3}
-  m_Center: {x: 0, y: 0.15, z: 0}
+  m_Size: {x: 0.3, y: 0.6, z: 0.3}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!4 &86349198 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 463878, guid: cd8dfdfc9730cee438d3bdecd2b91ecf, type: 3}
@@ -3148,6 +3152,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Item
       objectReference: {fileID: 0}
+    - target: {fileID: 1207515084871104, guid: 4ef4628f5f55fbd43b9fd014cc065b34, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442531895003412, guid: 4ef4628f5f55fbd43b9fd014cc065b34, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1522236235555568, guid: 4ef4628f5f55fbd43b9fd014cc065b34, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772882541765132, guid: 4ef4628f5f55fbd43b9fd014cc065b34, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     - target: {fileID: 4382071522870698, guid: 4ef4628f5f55fbd43b9fd014cc065b34, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3203,6 +3223,10 @@ PrefabInstance:
     - target: {fileID: 4382071522870698, guid: 4ef4628f5f55fbd43b9fd014cc065b34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846824965983810, guid: 4ef4628f5f55fbd43b9fd014cc065b34, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5877,7 +5901,7 @@ PrefabInstance:
       objectReference: {fileID: 902897616}
     - target: {fileID: 2303921294396319334, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
       propertyPath: keypadCombo
-      value: 1
+      value: 251521495
       objectReference: {fileID: 0}
     - target: {fileID: 2303921294396319335, guid: b47bdf1669865c841ace96330ee3d7ec, type: 3}
       propertyPath: m_Name
