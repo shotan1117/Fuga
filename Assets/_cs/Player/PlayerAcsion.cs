@@ -10,12 +10,6 @@ using UnityEngine;
 public class PlayerAcsion : MonoBehaviour
 {
     [SerializeField]
-    Transform parentObj;
-
-    [SerializeField]
-    Rigidbody parentRigidBody;
-
-    [SerializeField]
     AudioClip clip;
 
     public AudioSource audioSource;
@@ -33,11 +27,12 @@ public class PlayerAcsion : MonoBehaviour
     void Update()
     {
         OpenBox();
-        if (Time.timeScale== 0) { return; }
-        
+        //アイテムボックスを開いてるか
+        if (Time.timeScale== 0) { return; }   
         {
             float distance = 10;
             RaycastHit hit;
+            //コライダーを飛ばしてタグでアイテム判定
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance))
             {
                 if (Input.GetMouseButtonDown(0))
@@ -84,7 +79,7 @@ public class PlayerAcsion : MonoBehaviour
 
     private void OpenBox()
     {
-        //アイテムボックス
+        //アイテムボックスを開く
         if (Input.GetButtonDown("Inventory"))
         {
            ShowCanvase.OpenItemBox();

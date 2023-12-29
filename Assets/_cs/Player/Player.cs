@@ -8,46 +8,29 @@ public class Player : MonoBehaviour
     private float speed;
 
     [SerializeField]
-    private float playersiderotate;
-
-    [SerializeField]
     AudioClip clip;
-    Vector2 Rote;
+
     public PlayerAnimator PlayerAnimator;
-    public GameObject cam;
-    Quaternion cameraRot, characterRot;
     private Rigidbody rb;
     private AudioSource audioSource;
     private Vector2 move;
 
-    //角度の制限用
-    float minX = -90f, maxX = 65f;
+    
     // Start is called before the first frame update
     void Start()
-    {
-        cameraRot = cam.transform.localRotation;
-        characterRot = transform.localRotation;
-        rb = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
-        Cursor.lockState = CursorLockMode.Locked;
+    {     
+       rb = GetComponent<Rigidbody>();
+       audioSource = GetComponent<AudioSource>();
+       Cursor.lockState = CursorLockMode.Locked;
        Cursor.visible = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale == 0) { return; }
         //入力
-        Rote.x = Input.GetAxis("Mouse X") * playersiderotate;
-        Rote.y = Input.GetAxis("Mouse Y") * playersiderotate;
-        move.x = Input.GetAxisRaw("Horizontal");
-        move.y = Input.GetAxisRaw("Vertical");
-        cameraRot *= Quaternion.Euler(-Rote.y, 0, 0);
-        characterRot *= Quaternion.Euler(0, Rote.x, 0);
-
-        cameraRot = ClampRotation(cameraRot);
-        cam.transform.localRotation = cameraRot;
-        transform.localRotation = characterRot;
+        move.x = Input.GetAxisRaw("Horizontal") * speed;
+        move.y = Input.GetAxisRaw("Vertical") * speed;  
         PlayerAnimator.Animation(move);
         WalkSound();
     }
@@ -55,29 +38,12 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {    
         //移動
-        rb.velocity = ((transform.right * move.x) * speed) + ((transform.forward * move.y) * speed) + new Vector3(0, rb.velocity.y, 0);
-    }
-
-    //角度制限関数の作成
-    private Quaternion ClampRotation(Quaternion q)
-    {
-        q.x /= q.w;
-        q.y /= q.w;
-        q.z /= q.w;
-        q.w = 1f;
-
-        float angleX = Mathf.Atan(q.x) * Mathf.Rad2Deg * 2f;
-
-        angleX = Mathf.Clamp(angleX, minX, maxX);
-
-        q.x = Mathf.Tan(angleX * Mathf.Deg2Rad * 0.5f);
-
-        return q;
-    }
+        rb.velocity = (transform.right * move.x) + (transform.forward * move.y) + new Vector3(0, rb.velocity.y, 0);
+    }    
     private void WalkSound()
     {
         //移動時のみサウンドを鳴らす
-        if (move.x != 0 || move.y != 0)
+        if (move.x != 0 || move.y != 0 && Time.timeScale == 1)
         {
             if (!audioSource.isPlaying)
             {

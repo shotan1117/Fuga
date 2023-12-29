@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 221715838642391218}
   - component: {fileID: 8074595599400189951}
   - component: {fileID: 3974743317661322284}
+  - component: {fileID: 5316909448159329364}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -338,10 +339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  playersiderotate: 1
   clip: {fileID: 8300000, guid: 5b3f916952d4a1e4f9412f0b21c75c6e, type: 3}
   PlayerAnimator: {fileID: 8074595599400189951}
-  cam: {fileID: 4133373645853903851}
 --- !u!82 &221715838642391218
 AudioSource:
   m_ObjectHideFlags: 0
@@ -474,6 +473,20 @@ CapsuleCollider:
   m_Height: 1.65
   m_Direction: 1
   m_Center: {x: 0, y: -0.2, z: 0}
+--- !u!114 &5316909448159329364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5578243451001775191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c36507af4a802d42b042af09738e50f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playersiderotate: 5
+  cam: {fileID: 4133373645853903851}
 --- !u!1001 &7905771596082457968
 PrefabInstance:
   m_ObjectHideFlags: 0
