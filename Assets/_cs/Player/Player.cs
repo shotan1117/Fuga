@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     private float speed;
 
     [SerializeField]
-    AudioClip clip;
+    AudioClip Walkclip;
 
     public PlayerAnimator PlayerAnimator;
     private Rigidbody rb;
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         {
             if (!audioSource.isPlaying)
             {
-                audioSource.PlayOneShot(clip);
+                audioSource.PlayOneShot(Walkclip);
             }
         }
         else
