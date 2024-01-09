@@ -33,6 +33,7 @@ public class endText : MonoBehaviour
         switch (end)
         {
             case 1:
+                t.color = Color.gray;
                 textTime += Time.deltaTime;
                 int i = (int)(textTime / 4);
                 if (i > 2) i = 2;
@@ -42,6 +43,7 @@ public class endText : MonoBehaviour
             
 
             case 2:
+                t.color = Color.gray;
                 textTime += Time.deltaTime;
                 int ii = (int)(textTime / 4);
                 if (ii > 6) ii = 6;
