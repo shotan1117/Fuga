@@ -2073,6 +2073,14 @@ PrefabInstance:
       propertyPath: keypadCombo
       value: 251521495
       objectReference: {fileID: 0}
+    - target: {fileID: 1371395722296249804, guid: 4f10a0bb805c7614a8759e64acac78d8, type: 3}
+      propertyPath: keypadCombo2
+      value: 4511821
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371395722296249804, guid: 4f10a0bb805c7614a8759e64acac78d8, type: 3}
+      propertyPath: keypadConbo2
+      value: 5201314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
