@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   container: []
+  Using_Item: {fileID: 0}
+  Merging_Item_First: {fileID: 0}
+  Merging_Item_Second: {fileID: 0}

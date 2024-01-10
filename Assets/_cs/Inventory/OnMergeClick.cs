@@ -20,8 +20,8 @@ public class OnMergeClick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mergeList[3, 6] = 9;
-        mergeList[6, 3] = 9;
+        mergeList[3, 5] = 8;
+        mergeList[5, 3] = 8;
         mergeList[10, 11] = 12;
         mergeList[11, 10] = 12;
         mergeList[14, 15] = 16;
@@ -44,8 +44,7 @@ public class OnMergeClick : MonoBehaviour
                     mergeList[item2.ItemID, item1.ItemID] != 0
                     )
                 {
-                    Destroy(GameObject.Find(item1.name + "(Clone)"));
-                    Destroy(GameObject.Find(item2.name + "(Clone)"));
+                    
                     for(int i = 0; i <MergedItem.Length; i++)
                     {
                         if (MergedItem[i].ItemID== mergeList[item1.ItemID, item2.ItemID])
@@ -74,6 +73,8 @@ public class OnMergeClick : MonoBehaviour
 
                         }
                     }
+                    Destroy(GameObject.Find(item1.name + "(Clone)"));
+                    Destroy(GameObject.Find(item2.name + "(Clone)"));
                     clicked = false;
 
                 }
