@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43bbd7f7c11bcf841ae4db8dd9084682, type: 3}
   m_Name: "\u30AA\u30A4\u30EB+\u30E9\u30A4\u30BF\u30FC"
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 2101197815733182774, guid: 0160a8b19e1c26243bcca37fae49ca4c, type: 3}
   type: 2
   ItemID: 20
   name: "\u30AA\u30A4\u30EB+\u30E9\u30A4\u30BF\u30FC\r\r"

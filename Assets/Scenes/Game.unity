@@ -32248,7 +32248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7711560064047042604, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
       propertyPath: MergedItem.Array.size
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7711560064047042604, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
       propertyPath: MergedItem.Array.data[0]
@@ -32266,6 +32266,18 @@ PrefabInstance:
       propertyPath: MergedItem.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: 05f075a2f538a88479f2563a89fcc2fe, type: 2}
+    - target: {fileID: 7711560064047042604, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
+      propertyPath: MergedItem.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 96ccd91731b77934988e190deb7c58d3, type: 2}
+    - target: {fileID: 7711560064047042604, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
+      propertyPath: MergedItem.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 595b5907912b34742bf0d83c5077f283, type: 2}
+    - target: {fileID: 7711560064047042604, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
+      propertyPath: MergedItem.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ab802e7e5abe384bb612610bb039cf9, type: 2}
     - target: {fileID: 7754622511046919009, guid: 93b1c8e99463d10409e9c8c250397846, type: 3}
       propertyPath: m_Pivot.x
       value: 0
