@@ -22,13 +22,16 @@ public class UItext : MonoBehaviour
                 text.text = "";
                 break;
             case 1:
-            text.text = "ネジが緩んでいる...";
-            break;
-        case 4:
-            text.text = "鈍器があれば割れそう...？";
-            break;
+                text.text = "ネジが緩んでいる...";
+                break;
+            case 4:
+                text.text = "鈍器があれば割れそう...？";
+                break;
             case 6:
                 text.text = "釘が錆びている...釘抜があれば抜けそう...？";
+                break;
+            case 9:
+                text.text = "鍵が掛かっている...";
                 break;
             case 12:
                 text.text = "何かが血で隠れてる...怖いけど布があればふき取れそうかな...？";
