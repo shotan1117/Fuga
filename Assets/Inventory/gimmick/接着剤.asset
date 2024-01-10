@@ -15,6 +15,6 @@ MonoBehaviour:
   prefab: {fileID: 2101197815733182774, guid: 1409efbe0d456a54aa5c6087fb2af811, type: 3}
   type: 2
   ItemID: 7
-  name: "\u30AC\u30E9\u30B9\u5185\u306E\u91D8\u629C\r"
+  name: "\u63A5\u7740\u5264\r"
   description: "\u63A5\u7740\u5264\u3060\u3002\n\u4F55\u304B\u306B\u4F7F\u3048\u308B\u3060\u308D\u3046\u304B\u3002\n\u3068\u308A\u3042\u3048\u305A\u3068\u3063\u3066\u304A\u3053\u3046\u3002\r\n"
   used: 0

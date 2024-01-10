@@ -22,12 +22,18 @@ public class OnMergeClick : MonoBehaviour
     {
         mergeList[3, 5] = 8;
         mergeList[5, 3] = 8;
+        mergeList[7, 8] = 9;
+        mergeList[8, 7] = 9;
         mergeList[10, 11] = 12;
         mergeList[11, 10] = 12;
         mergeList[14, 15] = 16;
         mergeList[15, 14] = 16;
         mergeList[18, 19] = 20;
         mergeList[19, 18] = 20;
+        mergeList[15, 21] =17;
+        mergeList[21, 15] = 17;
+        mergeList[24, 19] = 23;
+        mergeList[19, 24] = 23;
 
         
     }
@@ -36,6 +42,7 @@ public class OnMergeClick : MonoBehaviour
     {
         if (clicked)
         {
+
             if (item1 != null && item2 != null)
 
             {
@@ -44,8 +51,12 @@ public class OnMergeClick : MonoBehaviour
                     mergeList[item2.ItemID, item1.ItemID] != 0
                     )
                 {
-                    
-                    for(int i = 0; i <MergedItem.Length; i++)
+                    Destroy(GameObject.Find(item1.name + "(Clone)"));
+                    Destroy(GameObject.Find(item2.name + "(Clone)"));
+                    Destroy(GameObject.Find(item1.name + "(Clone)"));
+                    Destroy(GameObject.Find(item2.name + "(Clone)"));
+
+                    for (int i = 0; i <MergedItem.Length; i++)
                     {
                         if (MergedItem[i].ItemID== mergeList[item1.ItemID, item2.ItemID])
                         {
@@ -73,8 +84,7 @@ public class OnMergeClick : MonoBehaviour
 
                         }
                     }
-                    Destroy(GameObject.Find(item1.name + "(Clone)"));
-                    Destroy(GameObject.Find(item2.name + "(Clone)"));
+                  
                     clicked = false;
 
                 }
