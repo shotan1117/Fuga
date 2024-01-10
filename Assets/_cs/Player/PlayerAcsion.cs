@@ -57,8 +57,8 @@ public class PlayerAcsion : MonoBehaviour
 
                 if (hit.collider.tag == "Gimmick")
                 {
-                    GameObject.Find("hintText").GetComponent<UItext>().num =
-                   hit.collider.GetComponent<Gimmick>().MyItemNo;
+                    /*GameObject.Find("hintText").GetComponent<UItext>().num =
+                   hit.collider.GetComponent<Gimmick>().MyItemNo;*/
                 }
             }
         }
