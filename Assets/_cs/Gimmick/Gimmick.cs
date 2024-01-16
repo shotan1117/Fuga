@@ -16,6 +16,9 @@ public class Gimmick : MonoBehaviour
     AudioSource Audio;
 
     [SerializeField]
+    Animator openandclose;
+
+    [SerializeField]
      AudioClip Clip;
     // Start is called before the first frame update
 
@@ -33,6 +36,11 @@ public class Gimmick : MonoBehaviour
             if(Audio != null)
             {
                 Audio.PlayOneShot(Clip);
+            }
+
+            if(openandclose != null)
+            {
+                openandclose.Play("Opening");
             }
         }  
     }
