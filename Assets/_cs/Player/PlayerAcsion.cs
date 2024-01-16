@@ -17,7 +17,8 @@ public class PlayerAcsion : MonoBehaviour
 
     //アイテムボックス
     public ShowCanvas ShowCanvase;
-    public InventoryObject inventory;
+    //public InventoryObject inventory;
+    public DisplayInventory dInventory;
 
     private Gimmick gimmick;
 
@@ -80,7 +81,8 @@ public class PlayerAcsion : MonoBehaviour
         var item = other.gameObject.GetComponent<itemData>();
         if (item)
         {
-            inventory.AddItem(item.i, 1);
+            //inventory.AddItem(item.i, 1);
+            dInventory.AddItem(item.i);
             audioSource.PlayOneShot(clip);
             Destroy(other.gameObject);
         }
@@ -98,10 +100,10 @@ public class PlayerAcsion : MonoBehaviour
     private void OnApplicationQuit()
     {
         //アイテムボックス内リセット
-        inventory.container.Clear();
-        inventory.Using_Item = null;
-        inventory.Merging_Item_First = null;
-        inventory.Merging_Item_Second = null;
+        //inventory.container.Clear();
+        //inventory.Using_Item = null;
+        //inventory.Merging_Item_First = null;
+        //inventory.Merging_Item_Second = null;
     }
 
     public void UseItem(int itemID)

@@ -6,85 +6,85 @@ using UnityEngine.UI;
 
 public class DisplayInventory : MonoBehaviour
 {
+    ItemObject nowItem = null;
+    public Transform listParent;
     public Text description;
-    public InventoryObject inventory;
-    public int X_START;
-    public int Y_START;
+    public OnMergeClick onMergeClick;
+    public OnUseClick onUseClick;
+    public itemImage itemImg;
 
-    public int X_SPACE_BETWEEN_ITEM;
-    public int NUMBER_OF_COLUMN;
-    public int Y_SPACE_BETWEEN_ITEMS;
+    Dictionary<int, GameObject> itemIconList = new Dictionary<int, GameObject>();
 
-    public Dictionary<InventorySlot,GameObject> itemDisplayed
-        = new Dictionary<InventorySlot,GameObject>();
-    // Start is called before the first frame update
+    public enum State
+    {
+        None,   // 何も選択していない
+        Select, // アイテム選択中
+        Merge,  // マージアイテム選択中
+    }
+    public State state = State.None;
+
     void Start()
-    {
-        CreateDisplay();      
+    {    
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddItem(ItemObject i)
     {
-        UpdateDisplay();
+        if (itemIconList.ContainsKey(i.ItemID)) return;
+
+        var obj = Instantiate(i.prefab, Vector3.zero,Quaternion.identity, listParent);
+        itemIconList.Add(i.ItemID, obj);
+
+        var itemUIIcon = obj.GetComponent<ItemUIIcon>();
+        itemUIIcon.item = i;
+        itemUIIcon.D_inventory = this;
     }
 
-    public void UpdateDisplay()
+    public void RemoveItem(int itemID)
     {
-        for(int i =0;i<inventory.container.Count;i++)
+        if(itemIconList.ContainsKey(itemID))
         {
-            
-            if (itemDisplayed.ContainsKey(inventory.container[i]))
-            {
-                //itemDisplayed[inventory.container[i]].GetComponentInChildren<TextMeshProUGUI>().text=
-                 //   inventory.container[i].amount.ToString("n0");
-            }
-            else
-            {
-                var obj = Instantiate(inventory.container[i].Item.prefab,
-                Vector3.zero, Quaternion.identity, transform);
-                
-                obj.GetComponent<RectTransform>().localPosition
-                    = GetPosition(i);
-
-               // obj.GetComponentInChildren<TextMeshProUGUI>().text =
-                   // inventory.container[i].amount.ToString("n0");
-                itemDisplayed.Add(inventory.container[i], obj);
-
-                var icon = obj.GetComponent<ItemUIIcon>();
-                icon.item = inventory.container[i].Item;
-                icon.D_inventory = this;
-            }
+            Destroy(itemIconList[itemID]);
+            itemIconList.Remove(itemID);
         }
     }
 
-    public void CreateDisplay()
+    // 組み合わせボタンを押したときの処理
+    public void MergeStart()
     {
-        for(int i =0;i<inventory.container.Count;i++)
-        {
-            var obj = Instantiate(inventory.container[i].Item.prefab,
-                Vector3.zero,Quaternion.identity,transform);
-
-            obj.GetComponent<RectTransform>().localPosition
-                =GetPosition(i);
-
-           // obj.GetComponentInChildren<TextMeshProUGUI>().text=
-              //  inventory.container[i].amount.ToString("n0");
-        }
-    }
-
-    public Vector3 GetPosition (int i )
-    {
-        return new Vector3(
-           X_START+ (X_SPACE_BETWEEN_ITEM * (i % NUMBER_OF_COLUMN)),
-           Y_START+ (-Y_SPACE_BETWEEN_ITEMS * (i / NUMBER_OF_COLUMN)),
-            0f
-            );
+        onMergeClick.item1 = nowItem;
+        state = State.Merge;
     }
 
     public void SelectItem(ItemObject item)
     {
+        switch(state)
+        {
+            case State.None:
+                ApplyItem(item);
+                state = State.Select;
+                break;
+            case State.Select:
+                ApplyItem(item);
+                break;
+            case State.Merge:
+                onMergeClick.item2 = item;
+                var newItem = onMergeClick.Merge();
+                state = State.Select;
+                // マージが成功したら新アイテムを選択
+                if (newItem != null)
+                {
+                    ApplyItem(newItem);
+                }
+                break;
+        }
+    }
+
+    void ApplyItem(ItemObject item)
+    {
+        nowItem = item;
         description.text = item.description;
-        
+        onUseClick.item = item;
+        itemImg.item = item;
+        itemImg.num = item.ItemID;
     }
 }

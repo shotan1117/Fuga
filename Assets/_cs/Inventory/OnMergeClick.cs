@@ -1,13 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using static UnityEditor.Progress;
+
+[Serializable]
+public class ItemMergeData
+{
+    public int itemA;
+    public int itemB;
+    public int result;
+
+    // 指定したアイテムがマージ可能か
+    public bool IsMatch(int item1, int item2)
+    {
+        if (item1 == itemA && item2 == itemB) return true;
+        if (item1 == itemB && item2 == itemA) return true;
+        return false;
+    }
+
+    public ItemMergeData(int A, int B, int r)
+    {
+        itemA = A;
+        itemB = B;
+        result = r;
+    }
+}
 
 public class OnMergeClick : MonoBehaviour
 {
-    public InventoryObject player_inv;
-    public bool clicked=false;
+    //public InventoryObject player_inv;
+    //public bool clicked=false;
     public ItemObject item1;
     public ItemObject item2;
     [SerializeField]
@@ -15,95 +41,60 @@ public class OnMergeClick : MonoBehaviour
    
     public DisplayInventory d_inv;
 
+    public List<ItemMergeData> mergeList = new List<ItemMergeData>();
 
-    public int[,] mergeList = new int[30, 30];
     // Start is called before the first frame update
     void Start()
     {
-        mergeList[3, 5] = 8;
-        mergeList[5, 3] = 8;
-        mergeList[7, 8] = 9;
-        mergeList[8, 7] = 9;
-        mergeList[10, 11] = 12;
-        mergeList[11, 10] = 12;
-        mergeList[14, 15] = 16;
-        mergeList[15, 14] = 16;
-        mergeList[18, 19] = 20;
-        mergeList[19, 18] = 20;
-        mergeList[15, 21] =17;
-        mergeList[21, 15] = 17;
-        mergeList[24, 19] = 23;
-        mergeList[19, 24] = 23;
-
-        
+        // マージリスト生成
+        mergeList.Add(new ItemMergeData(3, 5, 8));
+        mergeList.Add(new ItemMergeData(7, 8, 9));
+        mergeList.Add(new ItemMergeData(10, 11, 12));
+        mergeList.Add(new ItemMergeData(14, 15, 16));
+        mergeList.Add(new ItemMergeData(18, 19, 20));
+        mergeList.Add(new ItemMergeData(15, 21, 17));
+        mergeList.Add(new ItemMergeData(24, 19, 23));
     }
 
-   void Update()
+    ItemMergeData GetMergeData(int itemA, int itemB)
     {
-        if (clicked)
+        foreach(var m in mergeList)
         {
+            if (m.IsMatch(itemA, itemB)) return m;
+        }
+        return null;
+    }
 
-            if (item1 != null && item2 != null)
+    // アイテムをマージして新しいアイテムを生み出す
+    // 新たに生み出したアイテムを返す
+    // 失敗したらnull
+    public ItemObject Merge()
+    {
+        if (item1 == null) return null;
+        if (item2 == null) return null;
 
+        // マージデータ取得
+        var merge = GetMergeData(item1.ItemID, item2.ItemID);
+
+        if (merge != null)
+        {
+            for (int i = 0; i < MergedItem.Length; i++)
             {
-                if (mergeList[item1.ItemID, item2.ItemID] != 0
-                    ||
-                    mergeList[item2.ItemID, item1.ItemID] != 0
-                    )
+                if (MergedItem[i].ItemID == merge.result)
                 {
-                    //Destroy(GameObject.Find(item1.name + "(Clone)"));
-                    //Destroy(GameObject.Find(item2.name + "(Clone)"));
-                    //Destroy(GameObject.Find(item1.name + "(Clone)"));
-                    //Destroy(GameObject.Find(item2.name + "(Clone)"));
-
-                    for (int i = 0; i <MergedItem.Length; i++)
-                    {
-                        if (MergedItem[i].ItemID== mergeList[item1.ItemID, item2.ItemID])
-                        {
-                            print(MergedItem[i].ItemID);
-                            player_inv.AddItem(MergedItem[i], 1);
-                        }
-                    }
-                    for (int i = 0; i < player_inv.container.Count; i++)
-                    {
-                        if (player_inv.container[i].Item == item1)
-                        {
-                            player_inv.container.Remove(player_inv.container
-                               [i]);
-                            d_inv.itemDisplayed.Remove(player_inv.container[i]);
-
-                        }
-                    }
-                    for (int i = 0; i < player_inv.container.Count; i++)
-                    {
-                        if (player_inv.container[i].Item == item2)
-                        {
-                            player_inv.container.Remove(player_inv.container
-                                [i]);
-                            d_inv.itemDisplayed.Remove(player_inv.container[i]);
-
-
-                        }
-                    }
-                  
-                    clicked = false;
-
+                    d_inv.AddItem(MergedItem[i]);
+                    d_inv.RemoveItem(item1.ItemID);
+                    d_inv.RemoveItem(item2.ItemID);
+                    return MergedItem[i];
                 }
-                 
-
-               
             }
         }
+
+        return null;
     }
 
     public void OnMergeClickkk()
     {
-        if(clicked==false)
-        {
-            clicked = true;
-        }
-      
-
-       
+        d_inv.MergeStart();
     }
 }

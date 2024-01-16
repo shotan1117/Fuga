@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class OnUseClick : MonoBehaviour
 {
     public ItemObject item;
-    public InventoryObject inventory;
+    //public InventoryObject inventory;
     public PlayerAcsion Player;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class OnUseClick : MonoBehaviour
 
     public void ButtonClick()
     {
-        inventory.UseItem(item);
+        //inventory.UseItem(item);
         Player.UseItem(item.ItemID);
 
        
