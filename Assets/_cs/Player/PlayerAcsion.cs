@@ -27,11 +27,6 @@ public class PlayerAcsion : MonoBehaviour
     public GameObject UI;
     bool UItag = false;
 
-    private void Start()
-    {
-       
-    }
-    // Update is called once per frame
     void Update()
     {
         OpenBox();
@@ -58,6 +53,7 @@ public class PlayerAcsion : MonoBehaviour
                             break;
                     }
 
+                    //keypad“ü—Í‚·‚é‚½‚ß‚É•K—v
                     if (hit.collider.TryGetComponent(out KeypadButton keypadButton))
                     {
                         keypadButton.PressButton();

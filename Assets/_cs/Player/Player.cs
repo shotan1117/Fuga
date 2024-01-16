@@ -19,10 +19,8 @@ public class Player : MonoBehaviour
     float gravity = 9.8f;
     float vSpeed = 0; // 直近の重力
     
-    // Start is called before the first frame update
     void Start()
     {
-        //rb = GetComponent<Rigidbody>();
         characterController = GetComponent<CharacterController>();
         audioSource = GetComponent<AudioSource>();
        Cursor.lockState = CursorLockMode.Locked;
@@ -31,12 +29,10 @@ public class Player : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {   
         PlayerAnimator.Animation(move);
         WalkSound();
         Gravity();
-        //入力
         PlayerInput();           
     }
 
@@ -47,7 +43,7 @@ public class Player : MonoBehaviour
     }    
     private void WalkSound()
     {
-        //移動時のみサウンドを鳴らす
+        //移動時のサウンド
         if (move.x != 0 || move.y != 0 && Time.timeScale == 1)
         {
             if (!audioSource.isPlaying)
@@ -66,12 +62,14 @@ public class Player : MonoBehaviour
 
     public void PlayerInput()
     {
-        move.x = InputManeger.Instance.MoveX(move.x);
+        //入力
+        move.x =InputManeger.Instance.MoveX(move.x);
         move.y =  InputManeger.Instance.MoveY(move.y);
     }
 
     void Gravity()
     {
+        //重力
         if (characterController.isGrounded)
         {
             vSpeed = 0;

@@ -29,6 +29,7 @@ public class InputManeger : MonoBehaviour
         }
     }
 
+    //ˆÚ“®
     public float MoveY( float moveY)
     {
         if (Input.GetKey(key[0]))
