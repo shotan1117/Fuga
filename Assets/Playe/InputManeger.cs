@@ -28,4 +28,39 @@ public class InputManeger : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public float MoveY( float moveY)
+    {
+        if (Input.GetKey(key[0]))
+        {
+            moveY = 1;
+            Debug.Log("a");
+        }
+        else if(Input.GetKey(key[1]))
+        {
+            moveY = -1;
+        }
+        else
+        {
+            moveY = 0;
+        }
+        return moveY;
+    }
+
+    public float MoveX(float moveX)
+    {
+        if (Input.GetKey(key[3]))
+        {
+            moveX = 1;
+        }
+        else if (Input.GetKey(key[2]))
+        {
+            moveX = -1;
+        }
+        else
+        {
+            moveX = 0;
+        }
+        return moveX;
+    }
 }

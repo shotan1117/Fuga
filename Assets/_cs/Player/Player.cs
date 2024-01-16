@@ -66,26 +66,8 @@ public class Player : MonoBehaviour
 
     public void PlayerInput()
     {
-        if (Input.GetKey(InputManeger.Instance.Key[0]))
-        {
-            move.y = 1;
-        }
-        else if (Input.GetKey(InputManeger.Instance.Key[1]))
-        {
-            move.y = -1;
-        }
-        else if (Input.GetKey(InputManeger.Instance.Key[2]))
-        {
-            move.x = -1;
-        }
-        else if (Input.GetKey(InputManeger.Instance.Key[3]))
-        {
-            move.x = 1;
-        }
-        else
-        {
-            move = Vector2.zero;
-        }
+        move.x = InputManeger.Instance.MoveX(move.x);
+        move.y =  InputManeger.Instance.MoveY(move.y);
     }
 
     void Gravity()
