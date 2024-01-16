@@ -77,6 +77,10 @@ namespace NavKeypad
                             StartCoroutine(DisplayResultRoutine(true));
                         }
                     }
+                    else
+                    {
+                        StartCoroutine (DisplayResultRoutine(displayingResult));
+                    }
                     break;
                 default:
                     if (currentInput != null && currentInput.Length == 9) // 9 max passcode size 
