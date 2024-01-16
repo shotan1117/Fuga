@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+using NavKeypad;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +8,8 @@ using UnityEngine.UI;
 public class endText : MonoBehaviour
 {
     Text t;
-    [SerializeField]
-    public int end = 0;
     float textTime = 0;
+    private int end;
     string[] endOne = { "あ...あれ？ここは...寝室？",
                         "あれは、夢だったの？", 
         "夢で良かった。あんな怖い所にいるのは嫌だからね。" ,
@@ -25,23 +26,26 @@ public class endText : MonoBehaviour
                         "ー END 2 「ノスタルジア」 ー"
     };
 
+    private int i = 0;
+    public int ii = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         t = GetComponent<Text>();
+        end = PlayerPrefs.GetInt("flag");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         switch (end)
         {
             case 1:
                 t.color = Color.black;
                 textTime += Time.deltaTime;
-                int i = (int)(textTime / 4);
+                i = (int)(textTime / 4);
                 if (i > 3) i = 3;
                 t.text = endOne[i];
 
@@ -51,7 +55,7 @@ public class endText : MonoBehaviour
             case 2:
                 t.color = Color.black;
                 textTime += Time.deltaTime;
-                int ii = (int)(textTime / 4);
+                ii = (int)(textTime / 4);
                 if (ii > 8) ii = 8;
                 t.text = endTwo[ii];
                 break;

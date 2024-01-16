@@ -46,7 +46,11 @@ namespace NavKeypad
         public Animator Anim;
         public Animator Anim2;
 
-        public bool flag;
+        public  int flag = 0;
+        void Start()
+        {
+            DontDestroyOnLoad(this);
+        }
 
         private void Awake()
         {
@@ -68,6 +72,9 @@ namespace NavKeypad
                         if (!displayingResult)
                         {
                             StartCoroutine(DisplayResultRoutine(true));
+                            flag = 1;
+                            PlayerPrefs.SetInt("flag", flag);
+                            PlayerPrefs.Save();
                         }
                     }
                     else if (CheckCombo2())
@@ -75,6 +82,9 @@ namespace NavKeypad
                         if (!displayingResult)
                         {
                             StartCoroutine(DisplayResultRoutine(true));
+                            flag = 2;
+                            PlayerPrefs.SetInt("flag", flag);
+                            PlayerPrefs.Save();
                         }
                     }
                     else
