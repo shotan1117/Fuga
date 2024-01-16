@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 18501486}
   m_Layer: 0
   m_Name: LoadEndingScene
-  m_TagString: Gimmick
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7052,6 +7052,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7927410576926862883, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
+      propertyPath: HintoText
+      value: 
+      objectReference: {fileID: 947470393}
     - target: {fileID: 7927410576926862883, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: inventory
       value: 
