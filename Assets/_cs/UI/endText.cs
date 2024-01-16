@@ -10,6 +10,8 @@ public class endText : MonoBehaviour
     Text t;
     float textTime = 0;
     private int end;
+    private int i = 0;
+    public int ii = 0;
     string[] endOne = { "あ...あれ？ここは...寝室？",
                         "あれは、夢だったの？", 
         "夢で良かった。あんな怖い所にいるのは嫌だからね。" ,
@@ -26,8 +28,7 @@ public class endText : MonoBehaviour
                         "ー END 2 「ノスタルジア」 ー"
     };
 
-    private int i = 0;
-    public int ii = 0;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -48,10 +49,8 @@ public class endText : MonoBehaviour
                 i = (int)(textTime / 4);
                 if (i > 3) i = 3;
                 t.text = endOne[i];
-
-            break;
-            
-
+                break;
+           
             case 2:
                 t.color = Color.black;
                 textTime += Time.deltaTime;
