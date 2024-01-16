@@ -23,6 +23,10 @@ public class PlayerAcsion : MonoBehaviour
     private Gimmick gimmick;
 
     public UItext HintoText;
+
+    public GameObject UI;
+    bool UItag = false;
+
     private void Start()
     {
        
@@ -31,6 +35,7 @@ public class PlayerAcsion : MonoBehaviour
     void Update()
     {
         OpenBox();
+        UItext();
         //アイテムボックスを開いてるか
         if (Time.timeScale== 0) { return; }   
         {
@@ -39,7 +44,7 @@ public class PlayerAcsion : MonoBehaviour
             //コライダーを飛ばしてタグでアイテム判定
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance))
             {
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetKeyDown(InputManeger.Instance.Key[5]))
                 {
                     switch (hit.collider.tag)
                     {
@@ -72,7 +77,6 @@ public class PlayerAcsion : MonoBehaviour
                 }
             }
         }
-      
     }
 
     private void Itemaddition(Collider other)
@@ -91,7 +95,7 @@ public class PlayerAcsion : MonoBehaviour
     private void OpenBox()
     {
         //アイテムボックスを開く
-        if (Input.GetButtonDown("Inventory"))
+        if (Input.GetKeyDown(InputManeger.Instance.Key[4]))
         {
            ShowCanvase.OpenItemBox();
         }
@@ -113,6 +117,30 @@ public class PlayerAcsion : MonoBehaviour
         {
             gimmick.UseObject(itemID);
             ShowCanvase.OpenItemBox();
+        }
+    }
+
+    void UItext()
+    {
+        if (Input.GetKeyDown(InputManeger.Instance.Key[6]))
+        {
+            UnityEngine.Debug.Log("a");
+            if (UItag == false)
+            {
+                UI.gameObject.SetActive(true);
+                UItag = true;
+                Time.timeScale = 0;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Confined;
+            }
+            else
+            {
+                UI.gameObject.SetActive(false);
+                UItag = false;
+                Time.timeScale = 1;
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }
     }
 }

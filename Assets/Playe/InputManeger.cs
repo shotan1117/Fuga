@@ -4,22 +4,28 @@ using UnityEngine;
 
 public class InputManeger : MonoBehaviour
 {
+    public static InputManeger Instance;
     List<KeyCode> key = new List<KeyCode>();
-    List<string> keytext = new List<string>();
+    public List<KeyCode> Key  { get { return key; } }
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void GameKey( int KeyNo, KeyCode key)
-    {
-
+        //初期化
+        key.Add(KeyCode.W);       //前進
+        key.Add(KeyCode.S);       //後退
+        key.Add(KeyCode.A);       //左移動
+        key.Add(KeyCode.D);       //右移動
+        key.Add(KeyCode.E);       //インベントリ
+        key.Add(KeyCode.Mouse0);  //アイテムを取る/使う
+        key.Add(KeyCode.F1);  　　//キーコンフィグ
+        if (Instance == null) 
+        { 
+        Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
