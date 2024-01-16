@@ -9,9 +9,9 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     AudioClip Walkclip;
-
+   
     public PlayerAnimator PlayerAnimator;
-    //private Rigidbody rb;
+
     private AudioSource audioSource;
     private Vector2 move;
 
@@ -32,25 +32,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //“ü—Í
-        move.x = Input.GetAxisRaw("Horizontal") * speed;
-        move.y = Input.GetAxisRaw("Vertical") * speed;  
+        
         PlayerAnimator.Animation(move);
         WalkSound();
-
-        if (characterController.isGrounded)
-        {
-            vSpeed = 0;
-        }
-        vSpeed -= gravity * Time.deltaTime;
-        Vector3 moveVec = (transform.right * move.x) + (transform.forward * move.y) + new Vector3(0, vSpeed, 0);
-        characterController.Move(moveVec);
+        Gravity();
+        //“ü—Í
+        PlayerInput();           
     }
 
     private void FixedUpdate()
     {    
-        //ˆÚ“®
-        //rb.velocity = (transform.right * move.x) + (transform.forward * move.y) + new Vector3(0, rb.velocity.y, 0);
+        Vector3 moveVec = (transform.right * move.x * speed) + (transform.forward * move.y * speed) + new Vector3(0, vSpeed, 0);
+        characterController.Move(moveVec);
     }    
     private void WalkSound()
     {
@@ -69,5 +62,38 @@ public class Player : MonoBehaviour
                 audioSource.Stop();
             }
         }
+    }
+
+    public void PlayerInput()
+    {
+        if (Input.GetKey(InputManeger.Instance.Key[0]))
+        {
+            move.y = 1;
+        }
+        else if (Input.GetKey(InputManeger.Instance.Key[1]))
+        {
+            move.y = -1;
+        }
+        else if (Input.GetKey(InputManeger.Instance.Key[2]))
+        {
+            move.x = -1;
+        }
+        else if (Input.GetKey(InputManeger.Instance.Key[3]))
+        {
+            move.x = 1;
+        }
+        else
+        {
+            move = Vector2.zero;
+        }
+    }
+
+    void Gravity()
+    {
+        if (characterController.isGrounded)
+        {
+            vSpeed = 0;
+        }
+        vSpeed -= gravity * Time.deltaTime;
     }
 }

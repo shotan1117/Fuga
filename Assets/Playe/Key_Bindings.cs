@@ -5,28 +5,21 @@ using UnityEngine.UI;
 
 public class Key_Bindings : MonoBehaviour
 {
-    public Text textUI;
-    [SerializeField]
-    private KeyCode Defaul_Key_Bindings;
     [SerializeField]
     private int KeyNo;
 
-    [SerializeField] private InputManeger _actionRef;
+    [SerializeField] KeyUIText KeyUIText;
+    public wasa wasa;
+
     // Start is called before the first frame update
     void Start()
     {
-        //textUI.text =;
-       // _actionRef.Disable();
+        KeyUIText.ChangeUIText(InputManeger.Instance.Key[KeyNo].ToString());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-         
-    }
-
+   
     public void OnClick()
     {
-        Debug.Log("a");
+       wasa.gameObject.SetActive(true);
+        wasa.KeyChack(KeyNo,KeyUIText);
     }
 }
