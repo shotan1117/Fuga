@@ -51,15 +51,16 @@ public class OnMergeClick : MonoBehaviour
                     mergeList[item2.ItemID, item1.ItemID] != 0
                     )
                 {
-                    Destroy(GameObject.Find(item1.name + "(Clone)"));
-                    Destroy(GameObject.Find(item2.name + "(Clone)"));
-                    Destroy(GameObject.Find(item1.name + "(Clone)"));
-                    Destroy(GameObject.Find(item2.name + "(Clone)"));
+                    //Destroy(GameObject.Find(item1.name + "(Clone)"));
+                    //Destroy(GameObject.Find(item2.name + "(Clone)"));
+                    //Destroy(GameObject.Find(item1.name + "(Clone)"));
+                    //Destroy(GameObject.Find(item2.name + "(Clone)"));
 
                     for (int i = 0; i <MergedItem.Length; i++)
                     {
                         if (MergedItem[i].ItemID== mergeList[item1.ItemID, item2.ItemID])
                         {
+                            print(MergedItem[i].ItemID);
                             player_inv.AddItem(MergedItem[i], 1);
                         }
                     }
