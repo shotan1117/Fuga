@@ -14,7 +14,8 @@ public class PlayerAnimator : MonoBehaviour
 
     public void Animation( Vector2 Playermove)
     {
-        Anima.SetFloat("X" ,Playermove.x);
-        Anima.SetFloat ("Y" ,Playermove.y);
+        Vector3 vec = Playermove.normalized;
+        Anima.SetFloat("X" , vec.x);
+        Anima.SetFloat ("Y" , vec.y);
     }
 }

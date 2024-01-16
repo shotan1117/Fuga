@@ -11,16 +11,20 @@ public class Player : MonoBehaviour
     AudioClip Walkclip;
 
     public PlayerAnimator PlayerAnimator;
-    private Rigidbody rb;
+    //private Rigidbody rb;
     private AudioSource audioSource;
     private Vector2 move;
 
+    CharacterController characterController;
+    float gravity = 9.8f;
+    float vSpeed = 0; // íºãﬂÇÃèdóÕ
     
     // Start is called before the first frame update
     void Start()
-    {     
-       rb = GetComponent<Rigidbody>();
-       audioSource = GetComponent<AudioSource>();
+    {
+        //rb = GetComponent<Rigidbody>();
+        characterController = GetComponent<CharacterController>();
+        audioSource = GetComponent<AudioSource>();
        Cursor.lockState = CursorLockMode.Locked;
        Cursor.visible = true;
     }
@@ -33,12 +37,20 @@ public class Player : MonoBehaviour
         move.y = Input.GetAxisRaw("Vertical") * speed;  
         PlayerAnimator.Animation(move);
         WalkSound();
+
+        if (characterController.isGrounded)
+        {
+            vSpeed = 0;
+        }
+        vSpeed -= gravity * Time.deltaTime;
+        Vector3 moveVec = (transform.right * move.x) + (transform.forward * move.y) + new Vector3(0, vSpeed, 0);
+        characterController.Move(moveVec);
     }
 
     private void FixedUpdate()
     {    
         //à⁄ìÆ
-        rb.velocity = (transform.right * move.x) + (transform.forward * move.y) + new Vector3(0, rb.velocity.y, 0);
+        //rb.velocity = (transform.right * move.x) + (transform.forward * move.y) + new Vector3(0, rb.velocity.y, 0);
     }    
     private void WalkSound()
     {

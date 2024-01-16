@@ -37,7 +37,7 @@ public class Gimmick : MonoBehaviour
             {
                 Audio.PlayOneShot(Clip);
             }
-
+            //ÉhÉAêÍóp
             if(openandclose != null)
             {
                 openandclose.Play("Opening");
