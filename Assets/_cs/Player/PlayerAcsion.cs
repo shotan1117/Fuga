@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAcsion : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class PlayerAcsion : MonoBehaviour
     public InventoryObject inventory;
 
     private Gimmick gimmick;
+
+    public UItext HintoText;
     private void Start()
     {
        
@@ -57,8 +60,14 @@ public class PlayerAcsion : MonoBehaviour
 
                 if (hit.collider.tag == "Gimmick")
                 {
-                    GameObject.Find("hintText").GetComponent<UItext>().num =
-                   hit.collider.GetComponent<Gimmick>().MyItemNo;
+                    if(HintoText.num == 0)
+                    {
+                        HintoText.num = hit.collider.GetComponent<Gimmick>().MyItemNo;
+                    }
+                }
+                else
+                {
+                    HintoText.num = 0;
                 }
             }
         }
