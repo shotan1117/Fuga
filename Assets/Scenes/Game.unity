@@ -4933,7 +4933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4caa103c3924c478acbe227b38577a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myItemNo: 1
+  myItemNo: 9
   Item: {fileID: 0}
   Audio: {fileID: 0}
   openandclose: {fileID: 1212806646}
@@ -34645,6 +34645,11 @@ PrefabInstance:
     - {fileID: 4346703831308234402, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
     - {fileID: 9048025233671484209, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
     - {fileID: 8440899224697897408, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
+    - {fileID: 1220929995801766043, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
+    - {fileID: 8776763591154674757, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
+    - {fileID: 3959828670198067346, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
+    - {fileID: 5129560806551837626, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
+    - {fileID: 6692159990041843287, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6682266893796232322, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       insertIndex: -1
@@ -35223,7 +35228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1806939980325212408, guid: 62f8a2d62892c5847a44b2505a855540, type: 3}
       propertyPath: myItemNo
-      value: 1
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1806939980325212408, guid: 62f8a2d62892c5847a44b2505a855540, type: 3}
       propertyPath: openandclose
