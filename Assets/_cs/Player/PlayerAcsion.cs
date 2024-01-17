@@ -1,12 +1,5 @@
 using NavKeypad;
-using SojaExiles;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerAcsion : MonoBehaviour
 {
@@ -31,48 +24,46 @@ public class PlayerAcsion : MonoBehaviour
     {
         OpenBox();
         UItext();
-        //アイテムボックスを開いてるか
-        if (Time.timeScale== 0) { return; }   
+        if (Time.timeScale== 0) { return; }
+        float distance = 10;
+        RaycastHit hit;
+        //コライダーを飛ばしてタグでアイテム判定
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance))
         {
-            float distance = 10;
-            RaycastHit hit;
-            //コライダーを飛ばしてタグでアイテム判定
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance))
+            if (Input.GetKeyDown(InputManeger.Instance.Key[5]))
             {
-                if (Input.GetKeyDown(InputManeger.Instance.Key[5]))
+                switch (hit.collider.tag)
                 {
-                    switch (hit.collider.tag)
-                    {
-                        case "Item":
-                            Itemaddition(hit.collider);
-                            break;
+                    case "Item":
+                        Itemaddition(hit.collider);
+                        break;
 
-                        case "Gimmick":
-                            ShowCanvase.OpenItemBox();
-                            gimmick = hit.collider.GetComponent<Gimmick>();
-                            break;
-                    }
-
-                    //keypad入力するために必要
-                    if (hit.collider.TryGetComponent(out KeypadButton keypadButton))
-                    {
-                        keypadButton.PressButton();
-                    }
+                    case "Gimmick":
+                        ShowCanvase.OpenItemBox();
+                        gimmick = hit.collider.GetComponent<Gimmick>();
+                        break;
                 }
 
-                if (hit.collider.tag == "Gimmick")
+                //keypad入力するために必要
+                if (hit.collider.TryGetComponent(out KeypadButton keypadButton))
                 {
-                    if(HintoText.num == 0)
-                    {
-                        HintoText.num = hit.collider.GetComponent<Gimmick>().MyItemNo;
-                    }
-                }
-                else
-                {
-                    HintoText.num = 0;
+                    keypadButton.PressButton();
                 }
             }
+
+            if (hit.collider.tag == "Gimmick")
+            {
+                if (HintoText.num == 0)
+                {
+                    HintoText.num = hit.collider.GetComponent<Gimmick>().MyItemNo;
+                }
+            }
+            else
+            {
+                HintoText.num = 0;
+            }
         }
+
     }
 
     private void Itemaddition(Collider other)
