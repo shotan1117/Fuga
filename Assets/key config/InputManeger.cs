@@ -7,6 +7,14 @@ public class InputManeger : MonoBehaviour
     public static InputManeger Instance;
     List<KeyCode> key = new List<KeyCode>();
     public List<KeyCode> Key  { get { return key; } }
+
+    private float mouseSensi = 1;
+    public float MouseSensi 
+    { get { return mouseSensi; }
+      set { mouseSensi = value; } 
+    }
+
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -17,7 +25,8 @@ public class InputManeger : MonoBehaviour
         key.Add(KeyCode.D);       //右移動
         key.Add(KeyCode.E);       //インベントリ
         key.Add(KeyCode.Mouse0);  //アイテムを取る/使う
-        key.Add(KeyCode.F1);  　　//キーコンフィグ
+        key.Add(KeyCode.F1);      //キーコンフィグ
+
         if (Instance == null) 
         { 
         Instance = this;
@@ -29,13 +38,12 @@ public class InputManeger : MonoBehaviour
         }
     }
 
-    //移動
+    //移動用Vector2
     public float MoveY( float moveY)
     {
         if (Input.GetKey(key[0]))
         {
             moveY = 1;
-            Debug.Log("a");
         }
         else if(Input.GetKey(key[1]))
         {

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
-    [SerializeField]
-    private float playersiderotate;
-
     public GameObject cam;
     Vector2 Rote;
     //äpìxÇÃêßå¿
@@ -22,9 +19,6 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ì¸óÕ
-        Rote.x = Input.GetAxis("Mouse X") * playersiderotate;
-        Rote.y = Input.GetAxis("Mouse Y") * playersiderotate;
 
         cameraRot *= Quaternion.Euler(-Rote.y, 0, 0);
         characterRot *= Quaternion.Euler(0, Rote.x, 0);
@@ -34,6 +28,9 @@ public class PlayerCamera : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        //ì¸óÕ
+        Rote.x = Input.GetAxis("Mouse X") * InputManeger.Instance.MouseSensi;
+        Rote.y = Input.GetAxis("Mouse Y") * InputManeger.Instance.MouseSensi;
         cam.transform.localRotation = cameraRot;
         transform.localRotation = characterRot;
     }

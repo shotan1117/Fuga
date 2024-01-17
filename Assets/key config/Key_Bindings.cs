@@ -9,17 +9,18 @@ public class Key_Bindings : MonoBehaviour
     private int KeyNo;
 
     [SerializeField] KeyUIText KeyUIText;
-    public wasa wasa;
+    public Change_key Change_key;
 
     // Start is called before the first frame update
     void Start()
     {
+        //初期テキスト反映
         KeyUIText.ChangeUIText(InputManeger.Instance.Key[KeyNo].ToString());
     }
    
     public void OnClick()
     {
-       wasa.gameObject.SetActive(true);
-        wasa.KeyChack(KeyNo,KeyUIText);
+        Change_key.gameObject.SetActive(true);
+        Change_key.KeyChack(KeyNo);
     }
 }

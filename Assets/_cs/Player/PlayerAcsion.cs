@@ -91,19 +91,10 @@ public class PlayerAcsion : MonoBehaviour
     private void OpenBox()
     {
         //アイテムボックスを開く
-        if (Input.GetKeyDown(InputManeger.Instance.Key[4]))
+        if (Input.GetKeyDown(InputManeger.Instance.Key[4])&& UItag == false)
         {
            ShowCanvase.OpenItemBox();
         }
-    }
-
-    private void OnApplicationQuit()
-    {
-        //アイテムボックス内リセット
-        //inventory.container.Clear();
-        //inventory.Using_Item = null;
-        //inventory.Merging_Item_First = null;
-        //inventory.Merging_Item_Second = null;
     }
 
     public void UseItem(int itemID)
@@ -118,10 +109,10 @@ public class PlayerAcsion : MonoBehaviour
 
     void UItext()
     {
+        //キーコンフィグ
         if (Input.GetKeyDown(InputManeger.Instance.Key[6]))
         {
-            UnityEngine.Debug.Log("a");
-            if (UItag == false)
+            if (UItag == false&& Time.timeScale == 1)
             {
                 UI.gameObject.SetActive(true);
                 UItag = true;
@@ -129,13 +120,13 @@ public class PlayerAcsion : MonoBehaviour
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
             }
-            else
+            else if(UItag == true && Time.timeScale == 0)
             {
                 UI.gameObject.SetActive(false);
                 UItag = false;
                 Time.timeScale = 1;
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.lockState = CursorLockMode.Locked;               Cursor.visible = false;
+             
             }
         }
     }
