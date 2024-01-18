@@ -9174,6 +9174,10 @@ PrefabInstance:
       propertyPath: ShowCanvase
       value: 
       objectReference: {fileID: 1487158197}
+    - target: {fileID: 7927410576926862883, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1928830357}
     - target: {fileID: 7944768011421606056, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -9543,6 +9547,11 @@ MonoBehaviour:
 --- !u!4 &1928830356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1383340793722469673, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
+  m_PrefabInstance: {fileID: 1900858336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1928830357 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1517088286747576873, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
   m_PrefabInstance: {fileID: 1900858336}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1951787105
