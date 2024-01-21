@@ -11,6 +11,8 @@ namespace SojaExiles
 		public bool open;
 		public Transform Player;
 
+		public GameObject board;
+
         [SerializeField]
         AudioClip openclip;
 
@@ -24,37 +26,25 @@ namespace SojaExiles
 
 		void OnMouseOver()
 		{
-			{
-				if (Player)
-				{
-					float dist = Vector3.Distance(Player.transform.position, transform.position);
-					if (dist < 3.5f)
-					{
-						if (open == false)
-						{
-							if (Input.GetMouseButtonDown(0))
-							{
-								StartCoroutine(opening());
-							}
-						}
-						else
-						{
-							if (open == true)
-							{
-								if (Input.GetMouseButtonDown(0))
-								{
-									StartCoroutine(closing());
-								}
-							}
-
-						}
-
-					}
-				}
-
-			}
-
-		}
+            if (Player)
+            {
+                float dist = Vector3.Distance(Player.transform.position, transform.position);
+                if (dist < 3.5f)
+                {
+                    if (Input.GetKeyDown(InputManeger.Instance.Key[5]) && board == null)
+                    {
+                        if (open == false)
+                        {
+                            StartCoroutine(opening());
+                        }
+                        else 
+                        {
+                            StartCoroutine(closing());
+                        }
+                    }
+                }
+            }
+        }
 		
 		IEnumerator opening()
 		{

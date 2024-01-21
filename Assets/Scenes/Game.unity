@@ -12683,6 +12683,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1244759206158870139, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
+      propertyPath: board
+      value: 
+      objectReference: {fileID: 134379851}
+    - target: {fileID: 1244759206158870139, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 479409399}
@@ -20679,6 +20683,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4205978968836833580, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
+      propertyPath: board
+      value: 
+      objectReference: {fileID: 953163661}
+    - target: {fileID: 4205978968836833580, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 479409399}
@@ -24711,6 +24719,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5468564036254580712, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
+      propertyPath: board
+      value: 
+      objectReference: {fileID: 545632448}
+    - target: {fileID: 5468564036254580712, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 479409399}
@@ -28066,6 +28078,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6676176508709311176, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
+      propertyPath: board
+      value: 
+      objectReference: {fileID: 665239632}
     - target: {fileID: 6676176508709311176, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       propertyPath: Player
       value: 
