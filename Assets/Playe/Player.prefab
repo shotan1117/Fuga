@@ -202,12 +202,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fece799eb6d98f4da2b96b933985576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentObj: {fileID: 1034381152229280905}
-  parentRigidBody: {fileID: 6732608752975382047}
   clip: {fileID: 8300000, guid: 492c26534d1437540a73e154a8d087de, type: 3}
   audioSource: {fileID: 221715838642391218}
   ShowCanvase: {fileID: 0}
-  inventory: {fileID: 0}
+  dInventory: {fileID: 0}
+  HintoText: {fileID: 0}
+  UI: {fileID: 0}
 --- !u!1 &5578243451001775191
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,11 +219,9 @@ GameObject:
   - component: {fileID: 1034381152229280905}
   - component: {fileID: 1416176788735070883}
   - component: {fileID: 2401336518723819190}
-  - component: {fileID: 6732608752975382047}
   - component: {fileID: 83459877286327447}
   - component: {fileID: 221715838642391218}
   - component: {fileID: 8074595599400189951}
-  - component: {fileID: 3974743317661322284}
   - component: {fileID: 5316909448159329364}
   m_Layer: 0
   m_Name: Player
@@ -299,33 +297,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &6732608752975382047
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5578243451001775191}
-  serializedVersion: 4
-  m_Mass: 50
-  m_Drag: 0
-  m_AngularDrag: 100
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 32
-  m_CollisionDetection: 0
 --- !u!114 &83459877286327447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  clip: {fileID: 8300000, guid: 5b3f916952d4a1e4f9412f0b21c75c6e, type: 3}
+  Walkclip: {fileID: 0}
   PlayerAnimator: {fileID: 8074595599400189951}
 --- !u!82 &221715838642391218
 AudioSource:
@@ -450,29 +421,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Anima: {fileID: 3801225194387199331}
---- !u!136 &3974743317661322284
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5578243451001775191}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Height: 1.65
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.2, z: 0}
 --- !u!114 &5316909448159329364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,7 +433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c36507af4a802d42b042af09738e50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersiderotate: 5
   cam: {fileID: 4133373645853903851}
 --- !u!1001 &7905771596082457968
 PrefabInstance:
