@@ -21,6 +21,7 @@ namespace NavKeypad
         [Header("Settings")]
         [SerializeField] private string accessGrantedText = "Granted";
         [SerializeField] private string accessDeniedText = "Denied";
+        [SerializeField] private string DefaultText = "abd";
 
         [Header("Visuals")]
         [SerializeField] private float displayResultTime = 1f;
@@ -50,12 +51,14 @@ namespace NavKeypad
         void Start()
         {
             DontDestroyOnLoad(this);
+            keypadDisplayText.text = "Enter PIN";
         }
 
         private void Awake()
         {
             ClearInput();
             panelMesh.material.SetVector("_EmissionColor", screenNormalColor * screenIntensity);
+           
         }
 
 
