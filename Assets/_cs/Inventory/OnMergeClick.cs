@@ -54,6 +54,8 @@ public class OnMergeClick : MonoBehaviour
         mergeList.Add(new ItemMergeData(18, 19, 20));
         mergeList.Add(new ItemMergeData(15, 21, 17));
         mergeList.Add(new ItemMergeData(24, 19, 23));
+        mergeList.Add(new ItemMergeData(20,24,23));
+        mergeList.Add(new ItemMergeData(16,21,17));
     }
 
     ItemMergeData GetMergeData(int itemA, int itemB)
