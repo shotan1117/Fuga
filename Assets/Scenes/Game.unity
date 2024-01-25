@@ -1293,7 +1293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb1516f9014dcc41bc23dbc15ae9be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ac: {fileID: 0}
+  as1: {fileID: 0}
+  ac1: {fileID: 0}
+  ac2: {fileID: 0}
 --- !u!82 &309740753
 AudioSource:
   m_ObjectHideFlags: 0
@@ -34747,6 +34749,7 @@ PrefabInstance:
     - {fileID: 3723243607845957604, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
     - {fileID: 749684489871018132, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
     - {fileID: 749684488741106820, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
+    - {fileID: 7737752547899731320, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6967553686490897881, guid: 5ba2764d5750c1e42bba93ce6437ea05, type: 3}
       insertIndex: -1
