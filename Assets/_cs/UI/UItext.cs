@@ -36,7 +36,9 @@ public class UItext : MonoBehaviour
             case 12:
                 text.text = "何かが血で隠れてる...怖いけど布があればふき取れそうかな...？";
                 break;
-
+            case 100:
+                text.text = "扉の立て付けが悪くて開けられないなぁ";
+                break;
 
         }
 
