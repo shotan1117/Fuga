@@ -39,8 +39,12 @@ public class PlayerAcsion : MonoBehaviour
                         break;
 
                     case "Gimmick":
-                        ShowCanvase.OpenItemBox();
-                        gimmick = hit.collider.GetComponent<Gimmick>();
+                        gimmick = hit.collider.GetComponent<Gimmick>(); 
+                        if(gimmick.MyItemNo !=100)
+                        {
+                            ShowCanvase.OpenItemBox();
+                        }
+                        
                         break;
                 }
 
