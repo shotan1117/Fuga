@@ -16,6 +16,13 @@ public class GManager : MonoBehaviour
 
     public Text text;
 
+    private int gimmickcount = 0;
+    public int Gimmickcount
+    {
+        get { return gimmickcount; }
+        set { gimmickcount = value; }
+    }
+
     // Update is called once per frame
     
     // Start is called before the first frame update
@@ -47,18 +54,21 @@ public class GManager : MonoBehaviour
             case 2:
                 text.text = "他の階も探索してみよう";
                 break;
-            case 9:
+            case 3:
                 text.text = "鍵を使える場所を探してみよう";
                 break;
             case 4:
                 text.text = "この階を探索してみよう";
                 break;
             case 5:
-                text.text = "上の階から物音が・・・探索してみよう";
-                break;
-
-            case 6:
                 text.text = "他の番号が無いか探してみよう";
+                break;
+            case 6:
+                text.text = "番号がそろった気がする。入力しに行こう";
+                break;
+            case 100:
+                text.text = "上の方...屋上？から物音が...\n探索してみよう";
+                //"外から音がした気がする...\n外に行けるところに行ってみよう"
                 break;
         }
 
