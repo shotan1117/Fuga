@@ -26,7 +26,7 @@ public class Gimmick : MonoBehaviour
     {
         if (itemNo == MyItemNo)
         {
-            Destroy(this.gameObject);
+         
             //アイテムが入っていればアイテム生成
             if (Item != null)
             {
@@ -35,6 +35,7 @@ public class Gimmick : MonoBehaviour
             //サウンドが入っていればサウンドを鳴らす
             if(Audio != null)
             {
+                Debug.Log("a");
                 Audio.PlayOneShot(Clip);
             }
             //ドア専用
@@ -57,8 +58,9 @@ public class Gimmick : MonoBehaviour
                     Debug.Log("a");
                     GManager.Instances.HintMSG(6);
                 }
-               
+              
             }
+            Destroy(this.gameObject);
         }  
     }
    
