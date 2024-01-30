@@ -1262,9 +1262,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myItemNo: 4
   Item: {fileID: 1806965823}
-  Audio: {fileID: 0}
+  Audio: {fileID: 1928830357}
   openandclose: {fileID: 0}
-  Clip: {fileID: 0}
+  Clip: {fileID: 8300000, guid: 4959dea36857da94f8b4243841aeb4f8, type: 3}
 --- !u!1 &334511910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,9 +2288,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myItemNo: 6
   Item: {fileID: 0}
-  Audio: {fileID: 0}
+  Audio: {fileID: 1928830357}
   openandclose: {fileID: 0}
-  Clip: {fileID: 0}
+  Clip: {fileID: 8300000, guid: 4959dea36857da94f8b4243841aeb4f8, type: 3}
 --- !u!114 &552297496 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 781910330719208648, guid: 28434d9a0463c3948b078d0cb1b4896b, type: 3}
@@ -4633,9 +4633,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myItemNo: 6
   Item: {fileID: 0}
-  Audio: {fileID: 0}
+  Audio: {fileID: 1928830357}
   openandclose: {fileID: 0}
-  Clip: {fileID: 0}
+  Clip: {fileID: 8300000, guid: 4959dea36857da94f8b4243841aeb4f8, type: 3}
 --- !u!1001 &968732993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4806,9 +4806,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myItemNo: 4
   Item: {fileID: 0}
-  Audio: {fileID: 0}
+  Audio: {fileID: 1928830357}
   openandclose: {fileID: 0}
-  Clip: {fileID: 0}
+  Clip: {fileID: 8300000, guid: 248075ad0d7864a4383a73c32a4f544e, type: 3}
 --- !u!1001 &984254332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8294,9 +8294,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myItemNo: 12
   Item: {fileID: 0}
-  Audio: {fileID: 0}
+  Audio: {fileID: 1928830357}
   openandclose: {fileID: 0}
-  Clip: {fileID: 0}
+  Clip: {fileID: 8300000, guid: 492c26534d1437540a73e154a8d087de, type: 3}
 --- !u!1 &1656158023
 GameObject:
   m_ObjectHideFlags: 0
@@ -8638,9 +8638,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myItemNo: 1
   Item: {fileID: 0}
-  Audio: {fileID: 0}
+  Audio: {fileID: 1928830357}
   openandclose: {fileID: 0}
-  Clip: {fileID: 0}
+  Clip: {fileID: 8300000, guid: c55fbbbb618a6a54c805f79709da8058, type: 3}
 --- !u!1001 &1777638969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36207,9 +36207,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myItemNo: 1
   Item: {fileID: 0}
-  Audio: {fileID: 0}
+  Audio: {fileID: 1928830357}
   openandclose: {fileID: 0}
-  Clip: {fileID: 0}
+  Clip: {fileID: 8300000, guid: c55fbbbb618a6a54c805f79709da8058, type: 3}
 --- !u!4 &2145552893 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 814842094065206174, guid: 73b013d4095e9e34e828acf280766a2e, type: 3}
