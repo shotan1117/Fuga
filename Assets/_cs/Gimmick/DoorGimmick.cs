@@ -14,6 +14,9 @@ public class DoorGimmick : MonoBehaviour
     bool firstFlag;
     private AudioSource audiosource;
 
+    [SerializeField] int textNo;
+
+    public GameObject board;
     void Start()
     {
         open = false;
@@ -27,7 +30,7 @@ public class DoorGimmick : MonoBehaviour
             float dist = Vector3.Distance(Player.transform.position, transform.position);
             if (dist < 3.5f)
             {
-                if (Input.GetKeyDown(InputManeger.Instance.Key[5]))
+                if (Input.GetKeyDown(InputManeger.Instance.Key[5]) && board == null)
                 {
                     if (open == false)
                     {
@@ -41,8 +44,8 @@ public class DoorGimmick : MonoBehaviour
 
                     if (firstFlag == false)
                     {
-                        GManager.Instances.HintMSG(1);
-                        Debug.Log("a");
+                        GManager.Instances.HintMSG(textNo);
+                        firstFlag = true;
                     }
 
                 }
