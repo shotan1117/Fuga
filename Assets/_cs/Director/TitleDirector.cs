@@ -18,7 +18,7 @@ public class TitleDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(InputManeger.Instance.Key[5]))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Initiate.Fade(loadScene, fadeColor, fadeSpeedMultiplier);
         }
