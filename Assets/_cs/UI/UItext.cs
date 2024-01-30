@@ -7,12 +7,7 @@ public class UItext : MonoBehaviour
     public Text text;
     public int num=0;
     float textTime = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        text = GetComponent<Text>();
-    }
-
+   
     // Update is called once per frame
     void Update()
     {
@@ -53,5 +48,5 @@ public class UItext : MonoBehaviour
         
         }
 
-        }
     }
+}
