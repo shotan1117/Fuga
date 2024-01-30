@@ -7,14 +7,13 @@ public class Action_tips : MonoBehaviour
 {
     public Text text;
     public int num = 0;
-    float textTime = 0;
 
     // Update is called once per frame
-    void Update()
+    private void Start()
     {
-
+        HintMSG(0);
     }
-    
+
     public void HintMSG(int hintNo)
     {
         switch (num)
