@@ -9036,7 +9036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 392016361094724992, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: far clip plane
-      value: 512
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 392016361094724992, guid: 2c2e69684ab01a34c9fc5b595f5c8c1e, type: 3}
       propertyPath: m_CullingMask.m_Bits

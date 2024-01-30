@@ -46,13 +46,15 @@ public class Gimmick : MonoBehaviour
 
             if(MyItemNo == 12 )
             {
-                if (GManager.Instances.Gimmickcount < 3)
+                if (GManager.Instances.Gimmickcount < 2)
                 {
+                    Debug.Log("s");
                     GManager.Instances.HintMSG(5);
                     GManager.Instances.Gimmickcount += 1;
                 }
-                else
+                else 
                 {
+                    Debug.Log("a");
                     GManager.Instances.HintMSG(6);
                 }
                

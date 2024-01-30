@@ -24,6 +24,7 @@ public class PlayerAcsion : MonoBehaviour
     {
         OpenBox();
         UItext();
+        Debug.Log(GManager.Instances.Gimmickcount);
         if (Time.timeScale== 0) { return; }
         float distance = 10;
         RaycastHit hit;

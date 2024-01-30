@@ -16,7 +16,6 @@ public class Camera_control : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("a");
             MyCamera.enabled = true; 
         }
     }

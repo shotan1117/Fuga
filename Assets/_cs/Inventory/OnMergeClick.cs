@@ -99,19 +99,21 @@ public class OnMergeClick : MonoBehaviour
 
     private void ItemhintTExt(int itemNo)
     {
-        if(itemNo== 9)
+        if(itemNo== 9 && GManager.Instances.ProgressFlag ==2)
         {
             GManager.Instances.HintMSG(3);
         }
         else if(itemNo== 13 || itemNo == 17 || itemNo == 23)
         {
-            if(GManager.Instances.Gimmickcount < 3)
+            if(GManager.Instances.Gimmickcount != 2)
             {
                 GManager.Instances.HintMSG(5);
                 GManager.Instances.Gimmickcount += 1;
+                Debug.Log("s");
             }
-            else
+            else 
             {
+                Debug.Log("a");
                 GManager.Instances.HintMSG(6);
             }
         }
