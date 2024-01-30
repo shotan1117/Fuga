@@ -47,7 +47,7 @@ public class GManager : MonoBehaviour
             case 2:
                 text.text = "‘¼‚ÌŠK‚à’Tõ‚µ‚Ä‚İ‚æ‚¤";
                 break;
-            case 3:
+            case 9:
                 text.text = "Œ®‚ğg‚¦‚éêŠ‚ğ’T‚µ‚Ä‚İ‚æ‚¤";
                 break;
             case 4:

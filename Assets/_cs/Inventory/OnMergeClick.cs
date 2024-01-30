@@ -86,6 +86,10 @@ public class OnMergeClick : MonoBehaviour
                     d_inv.AddItem(MergedItem[i]);
                     d_inv.RemoveItem(item1.ItemID);
                     d_inv.RemoveItem(item2.ItemID);
+                    if (MergedItem[i].ItemID == 9)
+                    {
+                        GManager.Instances.HintMSG(MergedItem[i].ItemID);
+                    }
                     return MergedItem[i];
                 }
             }
