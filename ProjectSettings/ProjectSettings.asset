@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Fuga
+  productName: "2023\u5E74\u5EA6_\u5352\u696D\u5236\u4F5C_Fuga_\u300Camazon-prime\u300D"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -154,7 +154,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.Fuga
+    Standalone: com.DefaultCompany.2023--------------------Fuga----amazon-prime---
   buildNumber:
     Bratwurst: 0
     Standalone: 0
@@ -279,7 +279,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: db0b623aa3e0da3448ad169e0f7cb061, type: 3}
+      m_Icon: {fileID: 2800000, guid: 9cc8065cff73e6345821825f6767f4d1, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
