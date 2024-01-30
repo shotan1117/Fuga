@@ -41,6 +41,7 @@ public class Gimmick : MonoBehaviour
             if(openandclose != null)
             {
                 openandclose.Play("Opening");
+                GManager.Instances.HintMSG(4);
             }
         }  
     }
