@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2101197815733182774, guid: 218c3dfff2e80f842a883cfd9c7da265, type: 3}
   type: 2
-  ItemID: 24
+  ItemID: 30
   name: "\u5199\u771F\u305F\u3066\r\r"
   description: "\u9055\u548C\u611F\u306E\u3042\u308B\u5BB6\u65CF\u5199\u771F\u3060\u3002\n\n\u5199\u771F\u306E\u88CF\u306B\u8A18\u53F7\u3068\u6570\u5B57\u304C\u3042\u308B\n\u2661\u25C7118\u2664\u2667"
   used: 0
