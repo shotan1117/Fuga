@@ -43,6 +43,20 @@ public class Gimmick : MonoBehaviour
                 openandclose.Play("Opening");
                 GManager.Instances.HintMSG(4);
             }
+
+            if(MyItemNo == 12 )
+            {
+                if (GManager.Instances.Gimmickcount < 3)
+                {
+                    GManager.Instances.HintMSG(5);
+                    GManager.Instances.Gimmickcount += 1;
+                }
+                else
+                {
+                    GManager.Instances.HintMSG(6);
+                }
+               
+            }
         }  
     }
    

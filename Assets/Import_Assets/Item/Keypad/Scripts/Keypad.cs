@@ -152,6 +152,10 @@ namespace NavKeypad
 
         private void AccessDenied()
         {
+            if (GManager.Instances.ProgressFlag == 6)
+            {
+                    GManager.Instances.HintMSG(100);
+             }
             keypadDisplayText.text = accessDeniedText;
             onAccessDenied?.Invoke();
             panelMesh.material.SetVector("_EmissionColor", screenDeniedColor * screenIntensity);

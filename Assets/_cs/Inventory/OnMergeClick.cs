@@ -86,10 +86,7 @@ public class OnMergeClick : MonoBehaviour
                     d_inv.AddItem(MergedItem[i]);
                     d_inv.RemoveItem(item1.ItemID);
                     d_inv.RemoveItem(item2.ItemID);
-                    if (MergedItem[i].ItemID == 9)
-                    {
-                        GManager.Instances.HintMSG(MergedItem[i].ItemID);
-                    }
+                  
                     return MergedItem[i];
                 }
             }
@@ -98,6 +95,26 @@ public class OnMergeClick : MonoBehaviour
         return null;
     }
 
+
+    private void ItemhintTExt(int itemNo)
+    {
+        if(itemNo== 9)
+        {
+            GManager.Instances.HintMSG(3);
+        }
+        else if(itemNo== 13 || itemNo == 17 || itemNo == 23)
+        {
+            if(GManager.Instances.Gimmickcount < 3)
+            {
+                GManager.Instances.HintMSG(5);
+                GManager.Instances.Gimmickcount += 1;
+            }
+            else
+            {
+                GManager.Instances.HintMSG(6);
+            }
+        }
+    }
     public void OnMergeClickkk()
     {
         d_inv.MergeStart();
