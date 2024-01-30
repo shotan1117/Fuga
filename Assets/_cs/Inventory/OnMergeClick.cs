@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEditor;
 using UnityEngine;
+using static UnityEditor.Progress;
 //using static UnityEditor.Progress;
 
 [Serializable]
@@ -86,7 +87,7 @@ public class OnMergeClick : MonoBehaviour
                     d_inv.AddItem(MergedItem[i]);
                     d_inv.RemoveItem(item1.ItemID);
                     d_inv.RemoveItem(item2.ItemID);
-                  
+                    ItemhintTExt(MergedItem[i].ItemID);
                     return MergedItem[i];
                 }
             }
