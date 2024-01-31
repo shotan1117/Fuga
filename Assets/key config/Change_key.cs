@@ -23,7 +23,11 @@ public class Change_key : MonoBehaviour
             {
                 if (Input.GetKeyDown(code))
                 {
-                    KeyChack(code);
+                    if(code != InputManeger.Instance.Key[6])
+                    {
+                        KeyChack(code);
+                    }
+                   
                 }
             }
         }

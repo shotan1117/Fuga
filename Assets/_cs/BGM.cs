@@ -14,14 +14,15 @@ public class BGM : MonoBehaviour
     {
         as1 = GetComponent<AudioSource>();
         end = PlayerPrefs.GetInt("flag");
-        if (end == 1)
-        {
-            as1.PlayOneShot(ac1);
-        }
-        else
-        {
-            as1.PlayOneShot(ac2);
-        }
+        //if (end == 1)
+        //{
+        //    as1.PlayOneShot(ac1);
+        //}
+        //else
+        //{
+        //    as1.PlayOneShot(ac2);
+        //}
+        as1.PlayOneShot(ac1);
     }
 
     // Update is called once per frame

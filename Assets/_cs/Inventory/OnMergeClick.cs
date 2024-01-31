@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEditor;
 using UnityEngine;
-using static UnityEditor.Progress;
 //using static UnityEditor.Progress;
 
 [Serializable]
@@ -109,11 +108,9 @@ public class OnMergeClick : MonoBehaviour
             {
                 GManager.Instances.HintMSG(5);
                 GManager.Instances.Gimmickcount += 1;
-                Debug.Log("s");
             }
             else 
             {
-                Debug.Log("a");
                 GManager.Instances.HintMSG(6);
             }
         }

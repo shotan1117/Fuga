@@ -35,27 +35,27 @@ public class Gimmick : MonoBehaviour
             //サウンドが入っていればサウンドを鳴らす
             if(Audio != null)
             {
-                Debug.Log("a");
                 Audio.PlayOneShot(Clip);
             }
             //ドア専用
             if(openandclose != null)
             {
                 openandclose.Play("Opening");
-                GManager.Instances.HintMSG(4);
+                if(GManager.Instances.ProgressFlag == 3)
+                {
+                    GManager.Instances.HintMSG(4);
+                }   
             }
 
             if(MyItemNo == 12 )
             {
                 if (GManager.Instances.Gimmickcount < 2)
                 {
-                    Debug.Log("s");
                     GManager.Instances.HintMSG(5);
                     GManager.Instances.Gimmickcount += 1;
                 }
                 else 
                 {
-                    Debug.Log("a");
                     GManager.Instances.HintMSG(6);
                 }
               

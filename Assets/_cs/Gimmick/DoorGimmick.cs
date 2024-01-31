@@ -42,12 +42,11 @@ public class DoorGimmick : MonoBehaviour
                         StartCoroutine(closing());
                     }
 
-                    if (firstFlag == false)
+                    if (firstFlag == false && GManager.Instances.ProgressFlag == textNo-1)
                     {
                         GManager.Instances.HintMSG(textNo);
                         firstFlag = true;
                     }
-
                 }
             }
         }
